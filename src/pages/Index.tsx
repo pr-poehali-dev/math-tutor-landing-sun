@@ -164,7 +164,7 @@ export default function Index() {
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <div className="flex justify-center">
                 <img 
-                  src="https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/d8e01367-bba3-4045-994a-dae11709c174.jpg" 
+                  src="https://cdn.poehali.dev/files/67dd2ec4-c5d6-4976-978d-740df9e4c8af.jpg" 
                   alt="Репетитор Михаил" 
                   className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
                 />
