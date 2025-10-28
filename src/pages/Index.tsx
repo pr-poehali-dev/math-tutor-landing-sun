@@ -161,46 +161,46 @@ export default function Index() {
                 Профессиональный репетитор с высшим математическим образованием
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Icon name="GraduationCap" className="text-primary" size={24} />
-                  </div>
-                  <CardTitle>Образование</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    МГУ им. Ломоносова, факультет математики. Кандидат физико-математических наук.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Icon name="Target" className="text-secondary" size={24} />
-                  </div>
-                  <CardTitle>Методика</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Индивидуальный подход. Объясняю сложное простым языком. Развиваю логическое мышление.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <Icon name="Award" className="text-accent" size={24} />
-                  </div>
-                  <CardTitle>Достижения</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    15 учеников набрали 100 баллов на ЕГЭ. Победители олимпиад регионального уровня.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+              <div className="flex justify-center">
+                <img 
+                  src="https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/d8e01367-bba3-4045-994a-dae11709c174.jpg" 
+                  alt="Репетитор Михаил" 
+                  className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="space-y-6">
+                <Card className="hover:shadow-xl transition-all duration-300">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Icon name="GraduationCap" className="text-primary" size={24} />
+                      </div>
+                      <CardTitle>Образование</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      МГУ им. Ломоносова, факультет математики. Кандидат физико-математических наук.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="hover:shadow-xl transition-all duration-300">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                        <Icon name="Target" className="text-secondary" size={24} />
+                      </div>
+                      <CardTitle>Методика</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Индивидуальный подход. Объясняю сложное простым языком. Развиваю логическое мышление.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
