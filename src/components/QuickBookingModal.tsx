@@ -16,7 +16,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
 
   const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
   const phoneDigits = formData.phone.replace(/\D/g, '');
-  const isPhoneValid = phoneDigits.length >= 10;
+  const isPhoneValid = phoneDigits.length === 11 && phoneDigits.startsWith('7');
   const isFormValid = isNameValid && isPhoneValid;
 
   const formatPhoneNumber = (value: string) => {
@@ -122,8 +122,8 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
               }`}
               placeholder="+7 (999) 123-45-67"
             />
-            {formData.phone && !isPhoneValid && (
-              <p className="text-red-500 text-sm mt-1">Введите минимум 10 цифр</p>
+            {formData.phone && formData.phone.length > 3 && !isPhoneValid && (
+              <p className="text-red-500 text-sm mt-1">Введите 10 цифр после +7</p>
             )}
           </div>
 

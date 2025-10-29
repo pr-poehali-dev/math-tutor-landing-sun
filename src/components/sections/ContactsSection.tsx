@@ -14,7 +14,7 @@ export default function ContactsSection() {
 
   const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
   const phoneDigits = formData.phone.replace(/\D/g, '');
-  const isPhoneValid = phoneDigits.length >= 10;
+  const isPhoneValid = phoneDigits.length === 11 && phoneDigits.startsWith('7');
   const isFormValid = isNameValid && isPhoneValid;
 
   const formatPhoneNumber = (value: string) => {
@@ -118,8 +118,8 @@ export default function ContactsSection() {
                     className={formData.phone && !isPhoneValid ? 'border-red-500' : ''}
                     required
                   />
-                  {formData.phone && !isPhoneValid && (
-                    <p className="text-red-500 text-sm mt-1">Введите минимум 10 цифр</p>
+                  {formData.phone && formData.phone.length > 3 && !isPhoneValid && (
+                    <p className="text-red-500 text-sm mt-1">Введите 10 цифр после +7</p>
                   )}
                 </div>
                 <div>
