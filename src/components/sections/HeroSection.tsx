@@ -24,10 +24,7 @@ export default function HeroSection() {
                 <Icon name="Phone" className="mr-2" size={20} />
                 Записаться на занятие
               </Button>
-              <Button size="lg" variant="outline">
-                <Icon name="PlayCircle" className="mr-2" size={20} />
-                Пробный урок
-              </Button>
+              <Button size="lg" variant="outline">Первое пробное занятие — бесплатно!</Button>
             </div>
             <div className="flex items-center gap-8 pt-4">
               <div>
