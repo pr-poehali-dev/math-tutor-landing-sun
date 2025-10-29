@@ -56,7 +56,8 @@ export default function CasesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-accent/5 to-secondary/5 fade-on-scroll">
+    <>
+      <section className="py-20 bg-gradient-to-br from-accent/5 to-secondary/5 fade-on-scroll">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4">Успешные кейсы</Badge>
@@ -125,7 +126,8 @@ export default function CasesSection() {
           </Button>
         </div>
       </div>
-    </section>
-    <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </section>
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }
