@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
 interface QuickBookingModalProps {
@@ -13,11 +13,25 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
     subject: 'Занятие'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captchaQuestion, setCaptchaQuestion] = useState({ num1: 0, num2: 0, answer: 0 });
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptchaQuestion({ num1, num2, answer: num1 + num2 });
+    setCaptchaAnswer('');
+  };
 
   const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
   const phoneDigits = formData.phone.replace(/\D/g, '');
   const isPhoneValid = phoneDigits.length === 11 && phoneDigits.startsWith('7');
-  const isFormValid = isNameValid && isPhoneValid;
+  const isCaptchaValid = parseInt(captchaAnswer) === captchaQuestion.answer;
+  const isFormValid = isNameValid && isPhoneValid && isCaptchaValid;
 
   const formatPhoneNumber = (value: string) => {
     const digits = value.replace(/\D/g, '');
@@ -60,7 +74,9 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
 
       if (response.ok) {
         alert('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.');
-        setFormData({ name: '', phone: '', subject: 'Занятие' });
+        setFormData({ name: '', phone: '+7 ', subject: 'Занятие' });
+        setCaptchaAnswer('');
+        generateCaptcha();
         onClose();
       } else {
         alert('Ошибка при отправке заявки. Попробуйте позже.');
@@ -124,6 +140,25 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
             />
             {formData.phone && formData.phone.length > 3 && !isPhoneValid && (
               <p className="text-red-500 text-sm mt-1">Введите 10 цифр после +7</p>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Решите пример: {captchaQuestion.num1} + {captchaQuestion.num2} = ?
+            </label>
+            <input
+              type="number"
+              required
+              value={captchaAnswer}
+              onChange={(e) => setCaptchaAnswer(e.target.value)}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${
+                captchaAnswer && !isCaptchaValid ? 'border-red-500' : 'border-gray-300'
+              }`}
+              placeholder="Введите ответ"
+            />
+            {captchaAnswer && !isCaptchaValid && (
+              <p className="text-red-500 text-sm mt-1">Неверный ответ</p>
             )}
           </div>
 

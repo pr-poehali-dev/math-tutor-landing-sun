@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,11 +14,27 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [formData, setFormData] = useState({ name: '', phone: '+7 ', subject: 'Занятие' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captchaQuestion, setCaptchaQuestion] = useState({ num1: 0, num2: 0, answer: 0 });
+
+  useEffect(() => {
+    if (isOpen) {
+      generateCaptcha();
+    }
+  }, [isOpen]);
+
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptchaQuestion({ num1, num2, answer: num1 + num2 });
+    setCaptchaAnswer('');
+  };
 
   const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
   const phoneDigits = formData.phone.replace(/\D/g, '');
   const isPhoneValid = phoneDigits.length === 11 && phoneDigits.startsWith('7');
-  const isFormValid = isNameValid && isPhoneValid;
+  const isCaptchaValid = parseInt(captchaAnswer) === captchaQuestion.answer;
+  const isFormValid = isNameValid && isPhoneValid && isCaptchaValid;
 
   const formatPhoneNumber = (value: string) => {
     const digits = value.replace(/\D/g, '');
@@ -62,7 +78,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           title: "Заявка отправлена!",
           description: "Я свяжусь с вами в ближайшее время.",
         });
-        setFormData({ name: '', phone: '', subject: 'Занятие' });
+        setFormData({ name: '', phone: '+7 ', subject: 'Занятие' });
+        setCaptchaAnswer('');
+        generateCaptcha();
         onClose();
       } else {
         toast({
@@ -124,6 +142,22 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               />
               {formData.phone && formData.phone.length > 3 && !isPhoneValid && (
                 <p className="text-red-500 text-sm mt-1">Введите 10 цифр после +7</p>
+              )}
+            </div>
+            <div>
+              <label className="text-sm font-medium mb-2 block">
+                Решите пример: {captchaQuestion.num1} + {captchaQuestion.num2} = ?
+              </label>
+              <Input
+                type="number"
+                placeholder="Введите ответ"
+                value={captchaAnswer}
+                onChange={(e) => setCaptchaAnswer(e.target.value)}
+                className={captchaAnswer && !isCaptchaValid ? 'border-red-500' : ''}
+                required
+              />
+              {captchaAnswer && !isCaptchaValid && (
+                <p className="text-red-500 text-sm mt-1">Неверный ответ</p>
               )}
             </div>
             <Button type="submit" className="w-full" disabled={isSubmitting || !isFormValid}>
