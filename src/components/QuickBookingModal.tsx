@@ -19,6 +19,21 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
   const isPhoneValid = phoneDigits.length >= 10;
   const isFormValid = isNameValid && isPhoneValid;
 
+  const formatPhoneNumber = (value: string) => {
+    const digits = value.replace(/\D/g, '');
+    if (digits.length === 0) return '';
+    if (digits.length <= 1) return `+${digits}`;
+    if (digits.length <= 4) return `+${digits[0]} (${digits.slice(1)}`;
+    if (digits.length <= 7) return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
+    if (digits.length <= 9) return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+    return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9, 11)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    setFormData({ ...formData, phone: formatted });
+  };
+
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,11 +107,11 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
               type="tel"
               required
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={handlePhoneChange}
               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${
                 formData.phone && !isPhoneValid ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="+7 (___) ___-__-__"
+              placeholder="+7 (999) 123-45-67"
             />
             {formData.phone && !isPhoneValid && (
               <p className="text-red-500 text-sm mt-1">Введите минимум 10 цифр</p>
