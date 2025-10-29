@@ -20,7 +20,7 @@ export default function ContactsSection() {
     setTimeout(() => {
       toast({
         title: "Заявка отправлена!",
-        description: "Михаил свяжется с вами в ближайшее время.",
+        description: "Я свяжусь с вами в ближайшее время.",
       });
       setFormData({ name: '', phone: '', message: '' });
       setIsSubmitting(false);

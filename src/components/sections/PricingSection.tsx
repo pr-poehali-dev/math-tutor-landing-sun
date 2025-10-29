@@ -2,32 +2,11 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
+import BookingModal from '@/components/ui/booking-modal';
 
 export default function PricingSection() {
-  const [formData, setFormData] = useState({ name: '', phone: '', format: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleQuickBooking = (format: string) => {
-    setFormData({ ...formData, format });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Заявка отправлена!",
-        description: "Михаил свяжется с вами в ближайшее время.",
-      });
-      setFormData({ name: '', phone: '', format: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section id="pricing" className="py-20 fade-on-scroll">
@@ -68,7 +47,7 @@ export default function PricingSection() {
               <Button 
                 className="w-full" 
                 size="lg"
-                onClick={() => handleQuickBooking('Офлайн')}
+                onClick={() => setIsModalOpen(true)}
               >
                 Записаться
               </Button>
@@ -105,7 +84,7 @@ export default function PricingSection() {
                 className="w-full" 
                 size="lg" 
                 variant="outline"
-                onClick={() => handleQuickBooking('Онлайн')}
+                onClick={() => setIsModalOpen(true)}
               >
                 Записаться
               </Button>
@@ -124,48 +103,7 @@ export default function PricingSection() {
           </Card>
         </div>
 
-        {formData.format && (
-          <Card className="max-w-2xl mx-auto animate-fade-in">
-            <CardHeader>
-              <CardTitle className="text-center">Быстрая запись на {formData.format.toLowerCase()} занятие</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Ваше имя</label>
-                  <Input 
-                    placeholder="Введите ваше имя"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Телефон</label>
-                  <Input 
-                    type="tel"
-                    placeholder="+7 (999) 123-45-67"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    required
-                  />
-                </div>
-                <div className="flex gap-3">
-                  <Button type="submit" className="flex-1" disabled={isSubmitting}>
-                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-                  </Button>
-                  <Button 
-                    type="button" 
-                    variant="outline"
-                    onClick={() => setFormData({ name: '', phone: '', format: '' })}
-                  >
-                    Отмена
-                  </Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
-        )}
+        <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </section>
   );

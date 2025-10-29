@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import Icon from '@/components/ui/icon';
+import BookingModal from '@/components/ui/booking-modal';
 
 export default function ResultsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
+    <>
     <section id="results" className="py-20 fade-on-scroll">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -35,7 +42,15 @@ export default function ResultsSection() {
             </CardContent>
           </Card>
         </div>
+        <div className="text-center mt-12">
+          <Button size="lg" onClick={() => setIsModalOpen(true)}>
+            <Icon name="Phone" className="mr-2" size={20} />
+            Записаться на занятие
+          </Button>
+        </div>
       </div>
     </section>
+    <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

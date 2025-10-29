@@ -9,8 +9,7 @@ interface QuickBookingModalProps {
 export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModalProps) {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
-    lessonType: 'online'
+    phone: ''
   });
 
   if (!isOpen) return null;
@@ -34,7 +33,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
 
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Быстрая запись</h2>
-          <p className="text-gray-600">Заполните форму и мы свяжемся с вами</p>
+          <p className="text-gray-600">Заполните форму и я свяжусь с вами</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -64,36 +63,6 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               placeholder="+7 (___) ___-__-__"
             />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Тип занятия
-            </label>
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => setFormData({ ...formData, lessonType: 'online' })}
-                className={`px-4 py-3 rounded-lg font-medium transition-all ${
-                  formData.lessonType === 'online'
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                Онлайн
-              </button>
-              <button
-                type="button"
-                onClick={() => setFormData({ ...formData, lessonType: 'offline' })}
-                className={`px-4 py-3 rounded-lg font-medium transition-all ${
-                  formData.lessonType === 'offline'
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                Офлайн
-              </button>
-            </div>
           </div>
 
           <button

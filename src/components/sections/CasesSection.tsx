@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import BookingModal from '@/components/ui/booking-modal';
 
 export default function CasesSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const cases = [
     {
       name: 'Анна С.',
@@ -113,7 +118,14 @@ export default function CasesSection() {
             </Card>
           ))}
         </div>
+        <div className="text-center mt-12">
+          <Button size="lg" onClick={() => setIsModalOpen(true)}>
+            <Icon name="Phone" className="mr-2" size={20} />
+            Записаться на занятие
+          </Button>
+        </div>
       </div>
     </section>
+    <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
   );
 }
