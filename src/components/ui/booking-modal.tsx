@@ -11,7 +11,7 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
-  const [formData, setFormData] = useState({ name: '', phone: '', subject: 'Занятие' });
+  const [formData, setFormData] = useState({ name: '', phone: '+7 ', subject: 'Занятие' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -22,16 +22,25 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   const formatPhoneNumber = (value: string) => {
     const digits = value.replace(/\D/g, '');
-    if (digits.length === 0) return '';
-    if (digits.length <= 1) return `+${digits}`;
-    if (digits.length <= 4) return `+${digits[0]} (${digits.slice(1)}`;
-    if (digits.length <= 7) return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
-    if (digits.length <= 9) return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
-    return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9, 11)}`;
+    if (digits.length === 0) return '+7 ';
+    if (digits.length === 1 && digits[0] === '7') return '+7 ';
+    
+    const relevantDigits = digits.startsWith('7') ? digits.slice(1) : digits;
+    
+    if (relevantDigits.length === 0) return '+7 ';
+    if (relevantDigits.length <= 3) return `+7 (${relevantDigits}`;
+    if (relevantDigits.length <= 6) return `+7 (${relevantDigits.slice(0, 3)}) ${relevantDigits.slice(3)}`;
+    if (relevantDigits.length <= 8) return `+7 (${relevantDigits.slice(0, 3)}) ${relevantDigits.slice(3, 6)}-${relevantDigits.slice(6)}`;
+    return `+7 (${relevantDigits.slice(0, 3)}) ${relevantDigits.slice(3, 6)}-${relevantDigits.slice(6, 8)}-${relevantDigits.slice(8, 10)}`;
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatPhoneNumber(e.target.value);
+    const value = e.target.value;
+    if (!value.startsWith('+7')) {
+      setFormData({ ...formData, phone: '+7 ' });
+      return;
+    }
+    const formatted = formatPhoneNumber(value);
     setFormData({ ...formData, phone: formatted });
   };
 
