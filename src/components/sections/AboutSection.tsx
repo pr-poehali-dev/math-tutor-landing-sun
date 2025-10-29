@@ -48,7 +48,7 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Индивидуальный подход. Объясняю сложное простым языком. Развиваю логическое мышление.
+                  Программу обучения адаптирую под уровень и цели каждого ученика.
                 </p>
               </CardContent>
             </Card>
