@@ -52,6 +52,21 @@ export default function AboutSection() {
                 </p>
               </CardContent>
             </Card>
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <Icon name="Award" className="text-accent" size={24} />
+                  </div>
+                  <CardTitle>10 лет опыта</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Более 200 учеников успешно сдали ОГЭ и ЕГЭ на высокие баллы.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
