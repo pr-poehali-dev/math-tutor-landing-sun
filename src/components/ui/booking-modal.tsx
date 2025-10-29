@@ -11,7 +11,7 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
-  const [formData, setFormData] = useState({ name: '', phone: '', subject: 'Математика' });
+  const [formData, setFormData] = useState({ name: '', phone: '', subject: 'Занятие' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -33,7 +33,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           title: "Заявка отправлена!",
           description: "Я свяжусь с вами в ближайшее время.",
         });
-        setFormData({ name: '', phone: '', subject: 'Математика' });
+        setFormData({ name: '', phone: '', subject: 'Занятие' });
         onClose();
       } else {
         toast({
@@ -88,19 +88,6 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 required
               />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-2 block">Предмет</label>
-              <select
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                value={formData.subject}
-                onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                required
-              >
-                <option value="Математика">Математика</option>
-                <option value="Физика">Физика</option>
-                <option value="Информатика">Информатика</option>
-              </select>
             </div>
             <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting ? 'Отправка...' : 'Отправить заявку'}

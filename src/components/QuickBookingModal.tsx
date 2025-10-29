@@ -10,7 +10,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    subject: 'Математика'
+    subject: 'Занятие'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,7 +31,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
 
       if (response.ok) {
         alert('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.');
-        setFormData({ name: '', phone: '', subject: 'Математика' });
+        setFormData({ name: '', phone: '', subject: 'Занятие' });
         onClose();
       } else {
         alert('Ошибка при отправке заявки. Попробуйте позже.');
@@ -86,22 +86,6 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               placeholder="+7 (___) ___-__-__"
             />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Предмет
-            </label>
-            <select
-              required
-              value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-            >
-              <option value="Математика">Математика</option>
-              <option value="Физика">Физика</option>
-              <option value="Информатика">Информатика</option>
-            </select>
           </div>
 
           <button
