@@ -8,58 +8,95 @@ export default function ProgramSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4">Услуги</Badge>
-          <h2 className="text-4xl font-bold mb-4">Мои услуги</h2>
+          <h2 className="text-4xl font-bold mb-4">Услуги</h2>
+          <p className="text-muted-foreground">Офлайн в Солнцево и онлайн по всей России</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icon name="BookOpen" className="text-primary" />
-                Школьная программа 5-11 класс
+                Подготовка к ОГЭ
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Алгебра: уравнения, неравенства, функции</span>
+                <span>Разбор всех типов заданий</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Геометрия: планиметрия и стереометрия</span>
+                <span>Решение пробных вариантов</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Тригонометрия и начала анализа</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Помощь с домашними заданиями</span>
+                <span>Работа над типичными ошибками</span>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Icon name="TrendingUp" className="text-secondary" />
-                Подготовка к ЕГЭ и ОГЭ
+                <Icon name="Trophy" className="text-secondary" />
+                Подготовка к ЕГЭ
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Разбор всех типов заданий 1-19 части</span>
+                <span>Углубленное изучение материала</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Решение сложных задач части 2</span>
+                <span>Решение задач повышенной сложности</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Пробные экзамены и разбор ошибок</span>
+                <span>Стратегии успешной сдачи экзамена</span>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Icon name="TrendingUp" className="text-accent" />
+                Повышение успеваемости
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <div className="flex items-start gap-2">
+                <Icon name="Check" className="text-green-500 mt-1" size={18} />
+                <span>Помощь с домашними заданиями</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Психологическая подготовка к экзамену</span>
+                <span>Объяснение сложных тем</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Icon name="Check" className="text-green-500 mt-1" size={18} />
+                <span>Регулярный контроль знаний</span>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Icon name="Monitor" className="text-primary" />
+                Онлайн занятия
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <div className="flex items-start gap-2">
+                <Icon name="Check" className="text-green-500 mt-1" size={18} />
+                <span>Удобный формат обучения из дома</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Icon name="Check" className="text-green-500 mt-1" size={18} />
+                <span>Интерактивная доска и материалы</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Icon name="Check" className="text-green-500 mt-1" size={18} />
+                <span>Запись уроков для повторения</span>
               </div>
             </CardContent>
           </Card>
