@@ -7,8 +7,8 @@ export default function ProgramSection() {
     <section id="program" className="py-20 bg-gradient-to-r from-primary/5 to-accent/5 fade-on-scroll">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <Badge className="mb-4">Программа обучения</Badge>
-          <h2 className="text-4xl font-bold mb-4">Что изучаем на занятиях</h2>
+          <Badge className="mb-4">Услуги</Badge>
+          <h2 className="text-4xl font-bold mb-4">Мои услуги</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
