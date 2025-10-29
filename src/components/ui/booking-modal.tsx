@@ -15,6 +15,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
+  const phoneDigits = formData.phone.replace(/\D/g, '');
+  const isPhoneValid = phoneDigits.length >= 10;
+  const isFormValid = isNameValid && isPhoneValid;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -76,8 +81,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 placeholder="Введите ваше имя"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
+                className={formData.name && !isNameValid ? 'border-red-500' : ''}
                 required
               />
+              {formData.name && !isNameValid && (
+                <p className="text-red-500 text-sm mt-1">Используйте только русские буквы</p>
+              )}
             </div>
             <div>
               <label className="text-sm font-medium mb-2 block">Телефон</label>
@@ -86,10 +95,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 placeholder="+7 (999) 123-45-67"
                 value={formData.phone}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                className={formData.phone && !isPhoneValid ? 'border-red-500' : ''}
                 required
               />
+              {formData.phone && !isPhoneValid && (
+                <p className="text-red-500 text-sm mt-1">Введите минимум 10 цифр</p>
+              )}
             </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button type="submit" className="w-full" disabled={isSubmitting || !isFormValid}>
               {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
             </Button>
           </form>
