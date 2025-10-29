@@ -9,16 +9,39 @@ interface QuickBookingModalProps {
 export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModalProps) {
   const [formData, setFormData] = useState({
     name: '',
-    phone: ''
+    phone: '',
+    subject: 'Математика'
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Форма отправлена:', formData);
-    alert('Спасибо! Я свяжусь с вами в ближайшее время.');
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/008c4b56-5762-46d0-8643-0efa68e4aca2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.');
+        setFormData({ name: '', phone: '', subject: 'Математика' });
+        onClose();
+      } else {
+        alert('Ошибка при отправке заявки. Попробуйте позже.');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Ошибка при отправке заявки. Попробуйте позже.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,11 +88,28 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
             />
           </div>
 
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Предмет
+            </label>
+            <select
+              required
+              value={formData.subject}
+              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            >
+              <option value="Математика">Математика</option>
+              <option value="Физика">Физика</option>
+              <option value="Информатика">Информатика</option>
+            </select>
+          </div>
+
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:shadow-xl transition-all transform hover:scale-105"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:shadow-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Отправить заявку
+            {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
           </button>
         </form>
       </div>
