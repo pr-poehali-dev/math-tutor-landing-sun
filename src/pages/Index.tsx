@@ -155,7 +155,7 @@ export default function Index() {
                     <div className="text-sm text-muted-foreground">Средний балл ЕГЭ</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-accent">8+</div>
+                    <div className="text-3xl font-bold text-accent">10+</div>
                     <div className="text-sm text-muted-foreground">Лет опыта</div>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function Index() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      МГУ им. Ломоносова, факультет математики. Кандидат физико-математических наук.
+                      Выпускник физико-математического класса технического лицея. Окончил аспирантуру и преподавал более 5 лет в университете.
                     </p>
                   </CardContent>
                 </Card>
@@ -303,8 +303,8 @@ export default function Index() {
               </Card>
               <Card className="text-center">
                 <CardContent className="pt-6">
-                  <div className="text-5xl font-bold text-secondary mb-2">15</div>
-                  <p className="text-muted-foreground">Учеников получили 100 баллов</p>
+                  <div className="text-5xl font-bold text-secondary mb-2">90%</div>
+                  <p className="text-muted-foreground">Учеников поступили в вузы</p>
                 </CardContent>
               </Card>
               <Card className="text-center">
@@ -439,19 +439,19 @@ export default function Index() {
               <Card className="border-primary border-2 relative hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">Популярно</Badge>
                 <CardHeader>
-                  <CardTitle>Пакет 8 занятий</CardTitle>
-                  <CardDescription>Выгодное предложение</CardDescription>
+                  <CardTitle>Подготовка к ЕГЭ</CardTitle>
+                  <CardDescription>Интенсивный курс</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-4xl font-bold mb-4">14400₽ <span className="text-lg font-normal text-muted-foreground">1800₽/час</span></div>
+                  <div className="text-4xl font-bold mb-4">2500₽ <span className="text-lg font-normal text-muted-foreground">/90 мин</span></div>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start gap-2">
                       <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                      <span>Скидка 10%</span>
+                      <span>Полный разбор заданий</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                      <span>Все преимущества</span>
+                      <span>Пробные экзамены</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Icon name="Check" className="text-green-500 mt-1" size={18} />
