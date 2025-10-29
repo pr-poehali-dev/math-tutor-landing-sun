@@ -12,7 +12,8 @@ export default function CasesSection() {
       result: 'ЕГЭ',
       description: 'За 8 месяцев занятий повысила результат на 47 баллов. Поступила в МГУ на бюджет.',
       icon: 'TrendingUp',
-      color: 'primary'
+      color: 'primary',
+      image: 'https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/406170bc-eef4-4c42-b817-5d6c3166069e.jpg'
     },
     {
       name: 'Дмитрий П.',
@@ -22,7 +23,8 @@ export default function CasesSection() {
       result: 'ОГЭ',
       description: 'Подтянул школьную программу, успешно сдал ОГЭ на отлично. Поступил в физмат класс.',
       icon: 'Award',
-      color: 'secondary'
+      color: 'secondary',
+      image: 'https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/385573e5-088c-422c-9771-da076a357f42.jpg'
     },
     {
       name: 'Екатерина М.',
@@ -32,7 +34,8 @@ export default function CasesSection() {
       result: 'Профильная математика',
       description: 'За год подготовки научилась решать задачи повышенной сложности. Уверенно идет к цели в 90+ баллов.',
       icon: 'Target',
-      color: 'accent'
+      color: 'accent',
+      image: 'https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/d2ff3d2f-aace-4e15-a180-1f1ddd0303a8.jpg'
     },
     {
       name: 'Александр К.',
@@ -42,7 +45,8 @@ export default function CasesSection() {
       result: 'Школьная программа',
       description: 'Устранили пробелы в знаниях, развили пространственное мышление. Занял 1 место в городской олимпиаде.',
       icon: 'Trophy',
-      color: 'primary'
+      color: 'primary',
+      image: 'https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/80452719-cb3b-4bee-9f85-fbda0bbd8bd3.jpg'
     }
   ];
 
@@ -58,25 +62,34 @@ export default function CasesSection() {
           {cases.map((caseItem, index) => (
             <Card key={index} className="hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <CardTitle className="text-xl mb-1">{caseItem.name}</CardTitle>
-                    <div className="text-sm text-muted-foreground">{caseItem.class}</div>
-                  </div>
-                  <div className={
-                    caseItem.color === 'primary' ? 'w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center' :
-                    caseItem.color === 'secondary' ? 'w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center' :
-                    'w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center'
-                  }>
-                    <Icon 
-                      name={caseItem.icon as any} 
-                      className={
-                        caseItem.color === 'primary' ? 'text-primary' :
-                        caseItem.color === 'secondary' ? 'text-secondary' :
-                        'text-accent'
-                      }
-                      size={24} 
-                    />
+                <div className="flex items-start gap-4">
+                  <img 
+                    src={caseItem.image} 
+                    alt={caseItem.name}
+                    className="w-20 h-20 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <CardTitle className="text-xl mb-1">{caseItem.name}</CardTitle>
+                        <div className="text-sm text-muted-foreground">{caseItem.class}</div>
+                      </div>
+                      <div className={
+                        caseItem.color === 'primary' ? 'w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center' :
+                        caseItem.color === 'secondary' ? 'w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center' :
+                        'w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center'
+                      }>
+                        <Icon 
+                          name={caseItem.icon as any} 
+                          className={
+                            caseItem.color === 'primary' ? 'text-primary' :
+                            caseItem.color === 'secondary' ? 'text-secondary' :
+                            'text-accent'
+                          }
+                          size={24} 
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
