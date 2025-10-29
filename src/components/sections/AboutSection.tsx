@@ -10,7 +10,7 @@ export default function AboutSection() {
           <Badge className="mb-4">О преподавателе</Badge>
           <h2 className="text-4xl font-bold mb-4">Михаил — ваш проводник в мир математики</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Профессиональный репетитор с высшим математическим образованием
+            Профессиональный репетитор с успешным многолетним опытом преподавания
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
