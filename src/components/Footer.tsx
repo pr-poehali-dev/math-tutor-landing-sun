@@ -20,7 +20,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Контакты</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>Телефон: +7 (967) 139-40-18</p>
-              <p>Email: egipko.m@mail.ru</p>
+              <p></p>
               <p>Москва, район Солнцево</p>
             </div>
           </div>
