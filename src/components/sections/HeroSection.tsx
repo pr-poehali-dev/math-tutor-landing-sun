@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import QuickBookingModal from '@/components/QuickBookingModal';
 
 export default function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="relative py-20 overflow-hidden">
+    <>
+      <QuickBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -20,7 +26,7 @@ export default function HeroSection() {
               Репетитор по математике в Солнцево. Офлайн и онлайн занятия с опытным преподавателем. Подготовка к ОГЭ и ЕГЭ. Повышение успеваемости. Устранение пробелов в знаниях. Индивидуальный подход к каждому ученику.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setIsModalOpen(true)}>
                 <Icon name="Phone" className="mr-2" size={20} />
                 Записаться на занятие
               </Button>
@@ -51,6 +57,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
