@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Контакты</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>Телефон: +7 (999) 123-45-67</p>
+              <p>Телефон: +7 (967) 139-40-18</p>
               <p>Email: math@mikhail-tutor.ru</p>
               <p>Москва, район Солнцево</p>
             </div>
