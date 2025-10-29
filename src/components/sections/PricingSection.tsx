@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
@@ -9,81 +9,79 @@ export default function PricingSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4">Стоимость</Badge>
-          <h2 className="text-4xl font-bold mb-4">Прозрачные цены</h2>
-          <p className="text-muted-foreground">Выберите удобный формат обучения</p>
+          <h2 className="text-4xl font-bold mb-4">Цены на занятия</h2>
+          <p className="text-muted-foreground">Прозрачные и честные цены</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <CardHeader>
-              <CardTitle>Индивидуально</CardTitle>
-              <CardDescription>Один на один с преподавателем</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold mb-4">2000₽ <span className="text-lg font-normal text-muted-foreground">/час</span></div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Персональная программа</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Гибкое расписание</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Домашние задания</span>
-                </li>
-              </ul>
-              <Button className="w-full">Записаться</Button>
-            </CardContent>
-          </Card>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
           <Card className="border-primary border-2 relative hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">Популярно</Badge>
             <CardHeader>
-              <CardTitle>Подготовка к ЕГЭ</CardTitle>
-              <CardDescription>Интенсивный курс</CardDescription>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <Icon name="MapPin" className="text-primary" size={24} />
+                </div>
+                <CardTitle className="text-2xl">Офлайн</CardTitle>
+              </div>
+              <div className="text-4xl font-bold text-primary">2500 ₽</div>
+              <div className="text-sm text-muted-foreground">за 60 минут</div>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-bold mb-4">2500₽ <span className="text-lg font-normal text-muted-foreground">/90 мин</span></div>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Полный разбор заданий</span>
+                  <span>Занятия в районе Солнцево</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Пробные экзамены</span>
+                  <span>Личное общение с преподавателем</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Отчеты родителям</span>
+                  <span>Все учебные материалы включены</span>
                 </li>
               </ul>
-              <Button className="w-full">Записаться</Button>
+              <Button className="w-full" size="lg">Записаться</Button>
             </CardContent>
           </Card>
+          
           <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <CardHeader>
-              <CardTitle>Мини-группа</CardTitle>
-              <CardDescription>2-4 человека</CardDescription>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                  <Icon name="Monitor" className="text-secondary" size={24} />
+                </div>
+                <CardTitle className="text-2xl">Онлайн</CardTitle>
+              </div>
+              <div className="text-4xl font-bold text-secondary">2000 ₽</div>
+              <div className="text-sm text-muted-foreground">за 60 минут</div>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-bold mb-4">1200₽ <span className="text-lg font-normal text-muted-foreground">/час</span></div>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Групповая динамика</span>
+                  <span>Занятия из любой точки мира</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Доступная цена</span>
+                  <span>Интерактивная доска</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                  <span>Общение с единомышленниками</span>
+                  <span>Запись урока для повторения</span>
                 </li>
               </ul>
-              <Button className="w-full" variant="outline">Записаться</Button>
+              <Button className="w-full" size="lg" variant="outline">Записаться</Button>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="text-center">
+          <Card className="inline-block bg-gradient-to-r from-accent/10 to-primary/10 border-accent">
+            <CardContent className="py-4 px-8">
+              <div className="flex items-center gap-3">
+                <Icon name="Lightbulb" className="text-accent" size={24} />
+                <span className="text-lg font-semibold">Первое пробное занятие — бесплатно!</span>
+              </div>
             </CardContent>
           </Card>
         </div>
