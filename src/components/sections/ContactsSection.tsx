@@ -123,6 +123,41 @@ export default function ContactsSection() {
             </Card>
             <Card>
               <CardHeader>
+                <CardTitle>Быстрая связь</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <a 
+                  href="https://wa.me/79671394018" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors"
+                >
+                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                    <Icon name="MessageCircle" className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-medium">WhatsApp</div>
+                    <div className="text-sm text-muted-foreground">+7 (967) 139-40-18</div>
+                  </div>
+                </a>
+                <a 
+                  href="https://t.me/MathMaster2015" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors"
+                >
+                  <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <Icon name="Send" className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-medium">Telegram</div>
+                    <div className="text-sm text-muted-foreground">@MathMaster2015</div>
+                  </div>
+                </a>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
                 <CardTitle>Часто задаваемые вопросы</CardTitle>
               </CardHeader>
               <CardContent>
