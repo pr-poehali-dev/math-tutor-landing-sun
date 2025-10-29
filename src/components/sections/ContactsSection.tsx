@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
@@ -89,18 +89,10 @@ export default function ContactsSection() {
                   </div>
                   <div>
                     <div className="font-medium">Телефон</div>
-                    <div className="text-muted-foreground">+7 (999) 123-45-67</div>
+                    <div className="text-muted-foreground">+7 (967) 139-40-18</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
-                    <Icon name="Mail" className="text-secondary" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-medium">Email</div>
-                    <div className="text-muted-foreground">math@mikhail-tutor.ru</div>
-                  </div>
-                </div>
+
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
                     <Icon name="MapPin" className="text-accent" size={20} />
@@ -110,15 +102,7 @@ export default function ContactsSection() {
                     <div className="text-muted-foreground">Москва, район Солнцево</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon name="Clock" className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-medium">Время работы</div>
-                    <div className="text-muted-foreground">Пн-Пт 15:00-21:00, Сб-Вс 10:00-18:00</div>
-                  </div>
-                </div>
+
               </CardContent>
             </Card>
             <Card>
@@ -154,41 +138,23 @@ export default function ContactsSection() {
                     <div className="text-sm text-muted-foreground">@MathMaster2015</div>
                   </div>
                 </a>
+                <a 
+                  href="https://vk.com/mikhailmath" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors"
+                >
+                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <Icon name="Users" className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-medium">ВКонтакте</div>
+                    <div className="text-sm text-muted-foreground">vk.com/mikhailmath</div>
+                  </div>
+                </a>
               </CardContent>
             </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Часто задаваемые вопросы</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>Есть ли бесплатный пробный урок?</AccordionTrigger>
-                    <AccordionContent>
-                      Да, первое занятие бесплатное (30 минут). На нем мы познакомимся, определим уровень и составим план обучения.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Какой формат занятий?</AccordionTrigger>
-                    <AccordionContent>
-                      Провожу занятия онлайн (Zoom с интерактивной доской) и офлайн в районе Солнцево.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger>Сколько длится одно занятие?</AccordionTrigger>
-                    <AccordionContent>
-                      Стандартная продолжительность — 60 минут. Для подготовки к ЕГЭ рекомендую 90 минут.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-4">
-                    <AccordionTrigger>Как проходит оплата?</AccordionTrigger>
-                    <AccordionContent>
-                      Оплата наличными или переводом. Можно оплатить разово или пакетом со скидкой.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
+
           </div>
         </div>
       </div>

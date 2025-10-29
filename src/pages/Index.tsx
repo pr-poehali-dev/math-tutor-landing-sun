@@ -6,10 +6,10 @@ import AboutSection from '@/components/sections/AboutSection';
 import ProgramSection from '@/components/sections/ProgramSection';
 import ResultsSection from '@/components/sections/ResultsSection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
-import CasesSection from '@/components/sections/CasesSection';
 import PricingSection from '@/components/sections/PricingSection';
 import ContactsSection from '@/components/sections/ContactsSection';
-import ChatWidget from '@/components/ChatWidget';
+import FloatingSocialButtons from '@/components/FloatingSocialButtons';
+
 
 export default function Index() {
   useEffect(() => {
@@ -39,13 +39,13 @@ export default function Index() {
         <ProgramSection />
         <ResultsSection />
         <ReviewsSection />
-        <CasesSection />
+
         <PricingSection />
         <ContactsSection />
       </main>
 
       <Footer />
-      <ChatWidget />
+      <FloatingSocialButtons />
     </div>
   );
 }
