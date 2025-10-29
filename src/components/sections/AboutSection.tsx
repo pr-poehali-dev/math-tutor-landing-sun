@@ -43,7 +43,7 @@ export default function AboutSection() {
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
                     <Icon name="Target" className="text-secondary" size={24} />
                   </div>
-                  <CardTitle>Методика</CardTitle>
+                  <CardTitle>Индивидуальный подход</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
