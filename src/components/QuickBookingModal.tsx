@@ -17,7 +17,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Форма отправлена:', formData);
-    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+    alert('Спасибо! Я свяжусь с вами в ближайшее время.');
     onClose();
   };
 
@@ -32,8 +32,8 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
         </button>
 
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Быстрая запись</h2>
-          <p className="text-gray-600">Заполните форму и я свяжусь с вами</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Запись на занятие</h2>
+          <p className="text-gray-600">Оставьте заявку, и я свяжусь с вами в ближайшее время</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -69,7 +69,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
             type="submit"
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:shadow-xl transition-all transform hover:scale-105"
           >
-            Записаться
+            Отправить заявку
           </button>
         </form>
       </div>
