@@ -1,9 +1,34 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
 export default function PricingSection() {
+  const [formData, setFormData] = useState({ name: '', phone: '', format: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleQuickBooking = (format: string) => {
+    setFormData({ ...formData, format });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      toast({
+        title: "Заявка отправлена!",
+        description: "Михаил свяжется с вами в ближайшее время.",
+      });
+      setFormData({ name: '', phone: '', format: '' });
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
   return (
     <section id="pricing" className="py-20 fade-on-scroll">
       <div className="container mx-auto px-4">
@@ -40,7 +65,13 @@ export default function PricingSection() {
                   <span>Все учебные материалы включены</span>
                 </li>
               </ul>
-              <Button className="w-full" size="lg">Записаться</Button>
+              <Button 
+                className="w-full" 
+                size="lg"
+                onClick={() => handleQuickBooking('Офлайн')}
+              >
+                Записаться
+              </Button>
             </CardContent>
           </Card>
           
@@ -70,12 +101,19 @@ export default function PricingSection() {
                   <span>Запись урока для повторения</span>
                 </li>
               </ul>
-              <Button className="w-full" size="lg" variant="outline">Записаться</Button>
+              <Button 
+                className="w-full" 
+                size="lg" 
+                variant="outline"
+                onClick={() => handleQuickBooking('Онлайн')}
+              >
+                Записаться
+              </Button>
             </CardContent>
           </Card>
         </div>
         
-        <div className="text-center">
+        <div className="text-center mb-8">
           <Card className="inline-block bg-gradient-to-r from-accent/10 to-primary/10 border-accent">
             <CardContent className="py-4 px-8">
               <div className="flex items-center gap-3">
@@ -85,6 +123,49 @@ export default function PricingSection() {
             </CardContent>
           </Card>
         </div>
+
+        {formData.format && (
+          <Card className="max-w-2xl mx-auto animate-fade-in">
+            <CardHeader>
+              <CardTitle className="text-center">Быстрая запись на {formData.format.toLowerCase()} занятие</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Ваше имя</label>
+                  <Input 
+                    placeholder="Введите ваше имя"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Телефон</label>
+                  <Input 
+                    type="tel"
+                    placeholder="+7 (999) 123-45-67"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    required
+                  />
+                </div>
+                <div className="flex gap-3">
+                  <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+                  </Button>
+                  <Button 
+                    type="button" 
+                    variant="outline"
+                    onClick={() => setFormData({ name: '', phone: '', format: '' })}
+                  >
+                    Отмена
+                  </Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        )}
       </div>
     </section>
   );
