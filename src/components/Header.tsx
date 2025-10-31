@@ -37,7 +37,7 @@ export default function Header() {
               variant="outline" 
               size="default"
               asChild
-              className="hidden sm:flex"
+              className="hidden sm:flex bg-[#25D366] hover:bg-[#20BA5A] text-white border-[#25D366] hover:border-[#20BA5A]"
             >
               <a href="tel:+79671394018" className="flex items-center gap-2">
                 <Icon name="Phone" size={18} />
