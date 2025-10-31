@@ -32,7 +32,20 @@ export default function Header() {
             <a href="#pricing" className="hover:text-primary transition-colors">Стоимость</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button onClick={handleBookingClick}>Записаться</Button>
+          <div className="flex items-center gap-3">
+            <Button 
+              variant="outline" 
+              size="default"
+              asChild
+              className="hidden sm:flex"
+            >
+              <a href="tel:+79671394018" className="flex items-center gap-2">
+                <Icon name="Phone" size={18} />
+                <span>+7 (967) 139-40-18</span>
+              </a>
+            </Button>
+            <Button onClick={handleBookingClick}>Записаться</Button>
+          </div>
         </div>
       </header>
     </>
