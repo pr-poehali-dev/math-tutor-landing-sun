@@ -29,7 +29,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <div className="flex justify-center">
             <img 
-              src="https://cdn.poehali.dev/files/67dd2ec4-c5d6-4976-978d-740df9e4c8af.jpg" 
+              src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
               alt="Репетитор Михаил" 
               className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
             />
