@@ -7,6 +7,13 @@ import QuickBookingModal from '@/components/QuickBookingModal';
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'booking_clicked');
+    }
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <QuickBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -26,7 +33,7 @@ export default function HeroSection() {
               Репетитор по математике в Солнцево. Офлайн и онлайн занятия с опытным преподавателем. Подготовка к ОГЭ и ЕГЭ. Повышение успеваемости. Устранение пробелов в знаниях. Индивидуальный подход к каждому ученику.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setIsModalOpen(true)}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleBookingClick}>
                 <Icon name="Phone" className="mr-2" size={20} />
                 Записаться на занятие
               </Button>

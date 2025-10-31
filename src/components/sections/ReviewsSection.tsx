@@ -9,6 +9,13 @@ import BookingModal from '@/components/ui/booking-modal';
 export default function ReviewsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'booking_clicked');
+    }
+    setIsModalOpen(true);
+  };
+
   const reviews = [
     {
       name: 'Кристина Руденко',
@@ -66,7 +73,7 @@ export default function ReviewsSection() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button size="lg" onClick={() => setIsModalOpen(true)}>
+            <Button size="lg" onClick={handleBookingClick}>
               <Icon name="Phone" className="mr-2" size={20} />
               Записаться на занятие
             </Button>

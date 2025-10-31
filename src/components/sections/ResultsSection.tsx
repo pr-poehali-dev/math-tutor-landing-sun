@@ -8,6 +8,13 @@ import BookingModal from '@/components/ui/booking-modal';
 export default function ResultsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'booking_clicked');
+    }
+    setIsModalOpen(true);
+  };
+
   return (
     <>
     <section id="results" className="py-20 fade-on-scroll">
@@ -43,7 +50,7 @@ export default function ResultsSection() {
           </Card>
         </div>
         <div className="text-center mt-12">
-          <Button size="lg" onClick={() => setIsModalOpen(true)}>
+          <Button size="lg" onClick={handleBookingClick}>
             <Icon name="Phone" className="mr-2" size={20} />
             Записаться на занятие
           </Button>

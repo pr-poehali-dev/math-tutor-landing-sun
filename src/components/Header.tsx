@@ -6,6 +6,13 @@ import QuickBookingModal from '@/components/QuickBookingModal';
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'booking_clicked');
+    }
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <QuickBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -25,7 +32,7 @@ export default function Header() {
             <a href="#pricing" className="hover:text-primary transition-colors">Стоимость</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button onClick={() => setIsModalOpen(true)}>Записаться</Button>
+          <Button onClick={handleBookingClick}>Записаться</Button>
         </div>
       </header>
     </>

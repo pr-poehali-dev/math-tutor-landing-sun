@@ -8,6 +8,13 @@ import BookingModal from '@/components/ui/booking-modal';
 export default function PricingSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'booking_clicked');
+    }
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="pricing" className="py-20 fade-on-scroll">
       <div className="container mx-auto px-4">
@@ -47,7 +54,7 @@ export default function PricingSection() {
               <Button 
                 className="w-full" 
                 size="lg"
-                onClick={() => setIsModalOpen(true)}
+                onClick={handleBookingClick}
               >
                 Записаться
               </Button>
@@ -84,7 +91,7 @@ export default function PricingSection() {
                 className="w-full" 
                 size="lg" 
                 variant="outline"
-                onClick={() => setIsModalOpen(true)}
+                onClick={handleBookingClick}
               >
                 Записаться
               </Button>

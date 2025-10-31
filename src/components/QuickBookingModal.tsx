@@ -73,6 +73,9 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
       });
 
       if (response.ok) {
+        if (typeof window !== 'undefined' && window.ym) {
+          window.ym(105006130, 'reachGoal', 'booking_submitted');
+        }
         alert('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.');
         setFormData({ name: '', phone: '+7 ', subject: 'Занятие' });
         setCaptchaAnswer('');
