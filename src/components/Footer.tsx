@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Контакты</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>Телефон: +7 (967) 139-40-18</p>
+              <p>Телефон: <a href="tel:+79671394018" className="hover:text-primary transition-colors">+7 (967) 139-40-18</a></p>
               <p></p>
               <p>Москва, район Солнцево</p>
             </div>

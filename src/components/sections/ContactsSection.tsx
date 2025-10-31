@@ -172,7 +172,9 @@ export default function ContactsSection() {
                   </div>
                   <div>
                     <div className="font-medium">Телефон</div>
-                    <div className="text-muted-foreground">+7 (967) 139-40-18</div>
+                    <a href="tel:+79671394018" className="text-muted-foreground hover:text-primary transition-colors">
+                      +7 (967) 139-40-18
+                    </a>
                   </div>
                 </div>
 
