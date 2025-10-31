@@ -25,6 +25,12 @@ export default function ContactsSection() {
     setCaptchaAnswer('');
   };
 
+  const handlePhoneClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'phone_clicked');
+    }
+  };
+
   const isNameValid = /^[А-Яа-яЁё\s-]+$/.test(formData.name) && formData.name.trim().length > 0;
   const phoneDigits = formData.phone.replace(/\D/g, '');
   const isPhoneValid = phoneDigits.length === 11 && phoneDigits.startsWith('7');
@@ -172,7 +178,7 @@ export default function ContactsSection() {
                   </div>
                   <div>
                     <div className="font-medium">Телефон</div>
-                    <a href="tel:+79671394018" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="tel:+79671394018" onClick={handlePhoneClick} className="text-muted-foreground hover:text-primary transition-colors">
                       +7 (967) 139-40-18
                     </a>
                   </div>

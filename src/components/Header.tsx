@@ -13,6 +13,12 @@ export default function Header() {
     setIsModalOpen(true);
   };
 
+  const handlePhoneClick = () => {
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(105006130, 'reachGoal', 'phone_clicked');
+    }
+  };
+
   return (
     <>
       <QuickBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -39,7 +45,7 @@ export default function Header() {
               asChild
               className="hidden sm:flex bg-[#25D366] hover:bg-[#20BA5A] text-white border-[#25D366] hover:border-[#20BA5A]"
             >
-              <a href="tel:+79671394018" className="flex items-center gap-2">
+              <a href="tel:+79671394018" onClick={handlePhoneClick} className="flex items-center gap-2">
                 <Icon name="Phone" size={18} />
                 <span>+7 (967) 139-40-18</span>
               </a>
