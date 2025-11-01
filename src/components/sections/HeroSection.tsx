@@ -29,9 +29,7 @@ export default function HeroSection() {
                 результатом
               </span>
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Репетитор по математике в Солнцево. Офлайн и онлайн занятия с опытным преподавателем. Подготовка к ОГЭ и ЕГЭ. Повышение успеваемости. Устранение пробелов в знаниях. Индивидуальный подход к каждому ученику.
-            </p>
+            <p className="text-lg text-muted-foreground">Опытный репетитор по математике с авторской методикой. Готовлю к ОГЭ и ЕГЭ.  Помогаю разобраться в материале и устранить пробелы в знаниях. Индивидуальный подход к каждому ученику. Офлайн и онлайн занятия. </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleBookingClick}>
                 <Icon name="Phone" className="mr-2" size={20} />
