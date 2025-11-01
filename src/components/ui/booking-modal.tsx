@@ -74,6 +74,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       });
 
       if (response.ok) {
+        if (typeof window !== 'undefined' && window.ym) {
+          window.ym(105006130, 'reachGoal', 'Спасибо');
+        }
         toast({
           title: "Заявка отправлена!",
           description: "Я свяжусь с вами в ближайшее время.",
