@@ -22,59 +22,35 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
-            <Badge className="bg-gradient-to-r from-primary to-accent text-white text-base px-4 py-2 animate-pulse">🏆 85+ средний балл ЕГЭ моих учеников</Badge>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Сдай ЕГЭ на{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary animate-gradient">
-                85+ баллов
+            <Badge className="bg-accent text-white">ЕГЭ · ОГЭ · Школьная программа</Badge>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              Математика с{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+                результатом
               </span>
             </h1>
-            <p className="text-xl text-foreground font-medium">
-              Готовлю к ОГЭ и ЕГЭ по авторской методике. <span className="text-primary font-bold">200+ учеников</span> уже поступили в топовые вузы Москвы.
+            <p className="text-lg text-muted-foreground">
+              Репетитор по математике в Солнцево. Офлайн и онлайн занятия с опытным преподавателем. Подготовка к ОГЭ и ЕГЭ. Повышение успеваемости. Устранение пробелов в знаниях. Индивидуальный подход к каждому ученику.
             </p>
-            <div className="flex items-start gap-3 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-              <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-1" size={24} />
-              <div>
-                <p className="font-semibold text-green-900">Гарантия результата</p>
-                <p className="text-green-700 text-sm">Если не увидите прогресс за 4 занятия — верну деньги</p>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white text-lg h-14 px-8 shadow-lg hover:shadow-xl transition-all animate-bounce-subtle" onClick={handleBookingClick}>
-                <Icon name="Rocket" className="mr-2" size={24} />
-                Записаться на пробный урок
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleBookingClick}>
+                <Icon name="Phone" className="mr-2" size={20} />
+                Записаться на занятие
               </Button>
-              <div className="flex items-center gap-2 bg-yellow-50 border-2 border-yellow-400 rounded-lg px-4 py-2">
-                <Icon name="Gift" className="text-yellow-600" size={24} />
-                <span className="font-bold text-yellow-900">Первый урок БЕСПЛАТНО</span>
-              </div>
+              <Button size="lg" variant="outline">Первое пробное занятие — бесплатно!</Button>
             </div>
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="bg-white rounded-xl p-4 shadow-md border-2 border-primary/20 hover:border-primary transition-all">
-                <div className="text-4xl font-bold text-primary mb-1">200+</div>
-                <div className="text-sm font-medium text-foreground">Учеников поступили</div>
+            <div className="flex items-center gap-8 pt-4">
+              <div>
+                <div className="text-3xl font-bold text-primary">200+</div>
+                <div className="text-sm text-muted-foreground">Учеников</div>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow-md border-2 border-accent/20 hover:border-accent transition-all">
-                <div className="text-4xl font-bold text-accent mb-1">85+</div>
-                <div className="text-sm font-medium text-foreground">Средний балл ЕГЭ</div>
+              <div>
+                <div className="text-3xl font-bold text-secondary">85+</div>
+                <div className="text-sm text-muted-foreground">Средний балл ЕГЭ</div>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow-md border-2 border-secondary/20 hover:border-secondary transition-all">
-                <div className="text-4xl font-bold text-secondary mb-1">10+</div>
-                <div className="text-sm font-medium text-foreground">Лет опыта</div>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 pt-4">
-              <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2">
-                <Icon name="Star" className="text-yellow-500 fill-yellow-500" size={20} />
-                <span className="text-sm font-semibold">МГУ, МГТУ, ВШЭ</span>
-              </div>
-              <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2">
-                <Icon name="TrendingUp" className="text-green-600" size={20} />
-                <span className="text-sm font-semibold">+30 баллов за год</span>
-              </div>
-              <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2">
-                <Icon name="Users" className="text-blue-600" size={20} />
-                <span className="text-sm font-semibold">Группы и индивидуально</span>
+              <div>
+                <div className="text-3xl font-bold text-accent">10+</div>
+                <div className="text-sm text-muted-foreground">Лет опыта</div>
               </div>
             </div>
           </div>
