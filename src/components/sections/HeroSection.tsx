@@ -29,7 +29,32 @@ export default function HeroSection() {
                 результатом
               </span>
             </h1>
-            <p className="text-lg text-muted-foreground">Опытный репетитор по математике с авторской методикой. Готовлю к ОГЭ и ЕГЭ.  Помогаю разобраться в материале и устранить пробелы в знаниях. Индивидуальный подход к каждому ученику. Офлайн и онлайн занятия. </p>
+            <div className="space-y-4">
+              <p className="text-xl font-semibold text-foreground">
+                Ваш ребенок боится уроков математики? Появились плохие оценки?
+              </p>
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-5 rounded-xl border-l-4 border-primary space-y-3">
+                <p className="text-lg font-medium text-foreground">
+                  Моя «фишка» — делать своим ученикам <span className="text-primary font-bold">ВАУ-результаты</span> за несколько месяцев, потому что:
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span>У меня четкое понимание специфики и структуры ОГЭ/ЕГЭ</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span>Я не даю ничего лишнего при подготовке и понимаю, какие темы важны, а какие нет</span>
+                  </li>
+                </ul>
+              </div>
+              <p className="text-lg font-semibold text-accent">
+                Уберем все пробелы в знаниях и улучшим оценки в школе!
+              </p>
+              <p className="text-base text-muted-foreground">
+                Пишите/звоните, проведем бесплатное пробное занятие и отвечу на все интересующие Вас вопросы. Буду рад помочь разобраться в математике.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
