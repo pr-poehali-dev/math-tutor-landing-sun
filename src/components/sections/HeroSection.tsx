@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
@@ -6,6 +6,17 @@ import QuickBookingModal from '@/components/QuickBookingModal';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [spotsLeft, setSpotsLeft] = useState(3);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSpotsLeft(prev => {
+        if (prev <= 1) return 3;
+        return prev - 1;
+      });
+    }, 120000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleBookingClick = () => {
     if (typeof window !== 'undefined' && window.ym) {
@@ -30,23 +41,31 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-lg text-muted-foreground">Опытный репетитор по математике с авторской методикой. Готовлю к ОГЭ и ЕГЭ.  Помогаю разобраться в материале и устранить пробелы в знаниях. Индивидуальный подход к каждому ученику. Офлайн и онлайн занятия. </p>
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-slow"
-                onClick={handleBookingClick}
-              >
-                <Icon name="Rocket" className="mr-2" size={20} />
-                Записаться на пробный урок
-              </Button>
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-yellow-100 to-yellow-50 hover:from-yellow-200 hover:to-yellow-100 text-yellow-900 border-2 border-yellow-400 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                onClick={handleBookingClick}
-              >
-                <Icon name="Gift" className="mr-2 text-yellow-600" size={20} />
-                Первый урок БЕСПЛАТНО
-              </Button>
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-slow"
+                  onClick={handleBookingClick}
+                >
+                  <Icon name="Rocket" className="mr-2" size={20} />
+                  Записаться на пробный урок
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-yellow-100 to-yellow-50 hover:from-yellow-200 hover:to-yellow-100 text-yellow-900 border-2 border-yellow-400 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  onClick={handleBookingClick}
+                >
+                  <Icon name="Gift" className="mr-2 text-yellow-600" size={20} />
+                  Первый урок БЕСПЛАТНО
+                </Button>
+              </div>
+              <div className="flex items-center gap-2 bg-red-50 border-l-4 border-red-500 px-4 py-3 rounded-lg animate-pulse-slow">
+                <Icon name="AlertCircle" className="text-red-600 flex-shrink-0" size={20} />
+                <p className="text-sm font-semibold text-red-900">
+                  Осталось только <span className="text-xl font-bold">{spotsLeft}</span> {spotsLeft === 1 ? 'место' : 'места'} на бесплатный урок в этом месяце
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-8 pt-4">
               <div>
