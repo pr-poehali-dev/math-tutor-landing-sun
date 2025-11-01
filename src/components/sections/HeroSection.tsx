@@ -31,11 +31,22 @@ export default function HeroSection() {
             </h1>
             <p className="text-lg text-muted-foreground">Опытный репетитор по математике с авторской методикой. Готовлю к ОГЭ и ЕГЭ.  Помогаю разобраться в материале и устранить пробелы в знаниях. Индивидуальный подход к каждому ученику. Офлайн и онлайн занятия. </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleBookingClick}>
-                <Icon name="Phone" className="mr-2" size={20} />
-                Записаться на занятие
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-slow"
+                onClick={handleBookingClick}
+              >
+                <Icon name="Rocket" className="mr-2" size={20} />
+                Записаться на пробный урок
               </Button>
-              <Button size="lg" variant="outline">Первое пробное занятие — бесплатно!</Button>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-yellow-100 to-yellow-50 hover:from-yellow-200 hover:to-yellow-100 text-yellow-900 border-2 border-yellow-400 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                onClick={handleBookingClick}
+              >
+                <Icon name="Gift" className="mr-2 text-yellow-600" size={20} />
+                Первый урок БЕСПЛАТНО
+              </Button>
             </div>
             <div className="flex items-center gap-8 pt-4">
               <div>
