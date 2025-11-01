@@ -79,7 +79,7 @@ export default function ProgramSection() {
             <CardContent className="space-y-2">
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
-                <span>Помощь с домашними заданиями</span>
+                <span>Самостоятельное выполнение домашних заданий</span>
               </div>
               <div className="flex items-start gap-2">
                 <Icon name="Check" className="text-green-500 mt-1" size={18} />
