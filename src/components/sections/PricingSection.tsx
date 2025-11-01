@@ -52,7 +52,7 @@ export default function PricingSection() {
                 </li>
               </ul>
               <Button 
-                className="w-full" 
+                className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg" 
                 size="lg"
                 onClick={handleBookingClick}
               >
@@ -88,7 +88,7 @@ export default function PricingSection() {
                 </li>
               </ul>
               <Button 
-                className="w-full" 
+                className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg" 
                 size="lg" 
                 variant="outline"
                 onClick={handleBookingClick}

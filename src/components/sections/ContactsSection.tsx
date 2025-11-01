@@ -160,7 +160,7 @@ export default function ContactsSection() {
                     <p className="text-red-500 text-sm mt-1">Неверный ответ</p>
                   )}
                 </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting || !isFormValid}>
+                <Button type="submit" className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg" disabled={isSubmitting || !isFormValid}>
                   {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                 </Button>
               </form>
@@ -205,7 +205,7 @@ export default function ContactsSection() {
                   href="https://wa.me/79671394018" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                     <Icon name="MessageCircle" className="text-white" size={20} />
@@ -219,7 +219,7 @@ export default function ContactsSection() {
                   href="https://t.me/MathMaster2015" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
                     <Icon name="Send" className="text-white" size={20} />

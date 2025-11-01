@@ -63,7 +63,7 @@ export default function ChatWidget() {
       <Button
         onClick={() => setIsChatOpen(!isChatOpen)}
         size="lg"
-        className="fixed bottom-6 right-6 rounded-full w-16 h-16 shadow-2xl z-50 animate-float"
+        className="fixed bottom-6 right-6 rounded-full w-16 h-16 shadow-2xl z-50 animate-float transition-all duration-300 hover:scale-110 hover:shadow-2xl"
       >
         <Icon name={isChatOpen ? "X" : "MessageCircle"} size={24} />
       </Button>
@@ -111,7 +111,7 @@ export default function ChatWidget() {
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
               />
-              <Button onClick={handleSendMessage}>
+              <Button onClick={handleSendMessage} className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Icon name="Send" size={16} />
               </Button>
             </div>
