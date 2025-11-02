@@ -100,6 +100,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Open Sans", sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   h1,
@@ -109,6 +112,19 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  p,
+  span,
+  div,
+  li,
+  a,
+  button {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }
 
