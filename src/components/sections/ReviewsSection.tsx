@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -13,12 +13,51 @@ import {
 export default function ReviewsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedReview, setSelectedReview] = useState<string | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleBookingClick = () => {
     if (typeof window !== 'undefined' && window.ym) {
       window.ym(105006130, 'reachGoal', 'booking_clicked');
     }
     setIsModalOpen(true);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollAmount = 400;
+      
+      if (container.scrollLeft === 0) {
+        container.scrollTo({
+          left: container.scrollWidth,
+          behavior: 'smooth'
+        });
+      } else {
+        container.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollAmount = 400;
+      
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+        container.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        container.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    }
   };
 
   const reviews = [
@@ -59,10 +98,22 @@ export default function ReviewsSection() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Что говорят ученики и родители</h2>
           </div>
           
-          <div className="relative max-w-7xl mx-auto">
-            <div className="overflow-x-auto scrollbar-hide">
+          <div className="relative max-w-7xl mx-auto group">
+            <Button
+              variant="outline"
+              size="icon"
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/95 hover:bg-white shadow-xl h-12 w-12 opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={scrollLeft}
+            >
+              <Icon name="ChevronLeft" size={24} />
+            </Button>
+
+            <div 
+              ref={scrollContainerRef}
+              className="overflow-x-auto scrollbar-hide scroll-smooth"
+            >
               <div className="flex gap-4 md:gap-6 pb-4 snap-x snap-mandatory">
-                {reviews.map((review, index) => (
+                {reviews.concat(reviews).map((review, index) => (
                   <div 
                     key={index} 
                     className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center"
@@ -82,6 +133,15 @@ export default function ReviewsSection() {
                 ))}
               </div>
             </div>
+
+            <Button
+              variant="outline"
+              size="icon"
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/95 hover:bg-white shadow-xl h-12 w-12 opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={scrollRight}
+            >
+              <Icon name="ChevronRight" size={24} />
+            </Button>
             
             <div className="text-center text-sm text-muted-foreground mt-4 md:hidden">
               ← Пролистайте для просмотра →
