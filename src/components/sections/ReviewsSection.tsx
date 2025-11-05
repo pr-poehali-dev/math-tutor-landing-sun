@@ -3,9 +3,16 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import BookingModal from '@/components/ui/booking-modal';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function ReviewsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedReview, setSelectedReview] = useState<string | null>(null);
 
   const handleBookingClick = () => {
     if (typeof window !== 'undefined' && window.ym) {
@@ -34,6 +41,10 @@ export default function ReviewsSection() {
     {
       imageUrl: 'https://cdn.poehali.dev/files/527d3678-c402-427e-b888-43d185501487.png',
       alt: 'Отзыв Максима Сергеевича'
+    },
+    {
+      imageUrl: 'https://cdn.poehali.dev/files/c43c7d8c-2418-4feb-a408-63dadab43ef0.png',
+      alt: 'Отзыв Марии Васильевны'
     }
   ];
 
@@ -47,7 +58,11 @@ export default function ReviewsSection() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {reviews.map((review, index) => (
-              <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div 
+                key={index} 
+                className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-105"
+                onClick={() => setSelectedReview(review.imageUrl)}
+              >
                 <img 
                   src={review.imageUrl} 
                   alt={review.alt}
@@ -64,7 +79,23 @@ export default function ReviewsSection() {
           </div>
         </div>
       </section>
+      
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      
+      <Dialog open={!!selectedReview} onOpenChange={() => setSelectedReview(null)}>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-auto">
+          <DialogHeader>
+            <DialogTitle>Отзыв</DialogTitle>
+          </DialogHeader>
+          {selectedReview && (
+            <img 
+              src={selectedReview} 
+              alt="Отзыв"
+              className="w-full h-auto"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
