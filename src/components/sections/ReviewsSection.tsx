@@ -14,6 +14,8 @@ export default function ReviewsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedReview, setSelectedReview] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const handleBookingClick = () => {
     if (typeof window !== 'undefined' && window.ym) {
@@ -28,6 +30,32 @@ export default function ReviewsSection() {
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      handleNext();
+    }
+
+    if (distance < -minSwipeDistance) {
+      handlePrev();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
   };
 
   const reviews = [
@@ -77,7 +105,12 @@ export default function ReviewsSection() {
               <Icon name="ChevronLeft" size={20} className="md:w-6 md:h-6" />
             </Button>
 
-            <div className="overflow-hidden px-12 md:px-16">
+            <div 
+              className="overflow-hidden px-12 md:px-16"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div 
                 className="flex transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
