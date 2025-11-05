@@ -10,9 +10,46 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
+const initialReviews = [
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/97d3cf71-d5c6-4b66-9879-2069f00e3f22.png',
+    alt: 'Отзыв Елены Алексеевны'
+  },
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/eb13e8ba-8391-45ca-91e4-06688d6e9d1d.png',
+    alt: 'Отзыв Ольги Николаевны'
+  },
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/a93164b2-b4c8-4e49-969d-57f2d05032c1.png',
+    alt: 'Отзыв Ларисы Михайловны'
+  },
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/f966a38c-1a67-4c50-a1ad-8150b70628cf.png',
+    alt: 'Отзыв Натальи Викторовны'
+  },
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/527d3678-c402-427e-b888-43d185501487.png',
+    alt: 'Отзыв Максима Сергеевича'
+  },
+  {
+    imageUrl: 'https://cdn.poehali.dev/files/c43c7d8c-2418-4feb-a408-63dadab43ef0.png',
+    alt: 'Отзыв Марии Васильевны'
+  }
+];
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 export default function ReviewsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedReview, setSelectedReview] = useState<string | null>(null);
+  const [reviews] = useState(() => shuffleArray(initialReviews));
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleBookingClick = () => {
@@ -74,33 +111,6 @@ export default function ReviewsSection() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
-
-  const reviews = [
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/97d3cf71-d5c6-4b66-9879-2069f00e3f22.png',
-      alt: 'Отзыв Елены Алексеевны'
-    },
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/eb13e8ba-8391-45ca-91e4-06688d6e9d1d.png',
-      alt: 'Отзыв Ольги Николаевны'
-    },
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/a93164b2-b4c8-4e49-969d-57f2d05032c1.png',
-      alt: 'Отзыв Ларисы Михайловны'
-    },
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/f966a38c-1a67-4c50-a1ad-8150b70628cf.png',
-      alt: 'Отзыв Натальи Викторовны'
-    },
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/527d3678-c402-427e-b888-43d185501487.png',
-      alt: 'Отзыв Максима Сергеевича'
-    },
-    {
-      imageUrl: 'https://cdn.poehali.dev/files/c43c7d8c-2418-4feb-a408-63dadab43ef0.png',
-      alt: 'Отзыв Марии Васильевны'
-    }
-  ];
 
 
 
