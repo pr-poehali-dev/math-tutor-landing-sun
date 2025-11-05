@@ -79,7 +79,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         }
         toast({
           title: "Заявка отправлена!",
-          description: "Я свяжусь с вами в ближайшее время.",
+          description: "Я перезвоню вам или напишу в ближайшее окошко.",
         });
         setFormData({ name: '', phone: '+7 ', subject: 'Занятие' });
         setCaptchaAnswer('');
@@ -118,7 +118,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground mb-4">Оставьте заявку, и я свяжусь с вами в ближайшее время</p>
+          <p className="text-muted-foreground mb-4">Просто напишите мне и я перезвоню вам или напишу в ближайшее окошко</p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="text-sm font-medium mb-2 block">Ваше имя</label>

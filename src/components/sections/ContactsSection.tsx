@@ -77,7 +77,7 @@ export default function ContactsSection() {
       if (response.ok) {
         toast({
           title: "Заявка отправлена!",
-          description: "Я свяжусь с вами в ближайшее время.",
+          description: "Я перезвоню вам или напишу в ближайшее окошко.",
         });
         setFormData({ name: '', phone: '+7 ', subject: 'Обратная связь' });
         setCaptchaAnswer('');
@@ -112,8 +112,8 @@ export default function ContactsSection() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Форма обратной связи</CardTitle>
-              <CardDescription>Оставьте заявку, и я свяжусь с вами в ближайшее время</CardDescription>
+              <CardTitle>Есть проблема с математикой?</CardTitle>
+              <CardDescription>Просто напишите мне и я перезвоню вам или напишу в ближайшее окошко</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">

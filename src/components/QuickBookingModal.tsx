@@ -76,7 +76,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
         if (typeof window !== 'undefined' && window.ym) {
           window.ym(105006130, 'reachGoal', 'booking_submitted');
         }
-        alert('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.');
+        alert('Спасибо! Заявка отправлена. Я перезвоню вам или напишу в ближайшее окошко.');
         setFormData({ name: '', phone: '+7 ', subject: 'Занятие' });
         setCaptchaAnswer('');
         generateCaptcha();
@@ -104,7 +104,7 @@ export default function QuickBookingModal({ isOpen, onClose }: QuickBookingModal
 
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Запись на занятие</h2>
-          <p className="text-gray-600">Оставьте заявку, и я свяжусь с вами в ближайшее время</p>
+          <p className="text-gray-600">Просто напишите мне и я перезвоню вам или напишу в ближайшее окошко</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
