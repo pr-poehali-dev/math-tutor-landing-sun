@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -57,33 +57,27 @@ export default function ReviewsSection() {
     }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000);
 
-    return () => clearInterval(interval);
-  }, [currentIndex]);
 
   return (
     <>
       <section id="reviews" className="py-20 bg-gradient-to-br from-secondary/5 to-primary/5 fade-on-scroll">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <Badge className="mb-4">Отзывы</Badge>
-            <h2 className="text-4xl font-bold mb-4">Что говорят ученики и родители</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Что говорят ученики и родители</h2>
           </div>
           <div className="relative max-w-4xl mx-auto">
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg"
+              className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg h-10 w-10 md:h-12 md:w-12"
               onClick={handlePrev}
             >
-              <Icon name="ChevronLeft" size={24} />
+              <Icon name="ChevronLeft" size={20} className="md:w-6 md:h-6" />
             </Button>
 
-            <div className="overflow-hidden px-12">
+            <div className="overflow-hidden px-12 md:px-16">
               <div 
                 className="flex transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -91,16 +85,17 @@ export default function ReviewsSection() {
                 {reviews.map((review, index) => (
                   <div 
                     key={index} 
-                    className="min-w-full flex-shrink-0 px-4"
+                    className="min-w-full flex-shrink-0 px-2 md:px-4"
                   >
                     <div 
-                      className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer max-w-md mx-auto"
+                      className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer max-w-sm md:max-w-md mx-auto"
                       onClick={() => setSelectedReview(review.imageUrl)}
                     >
                       <img 
                         src={review.imageUrl} 
                         alt={review.alt}
                         className="w-full h-auto object-cover"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -111,20 +106,21 @@ export default function ReviewsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg"
+              className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg h-10 w-10 md:h-12 md:w-12"
               onClick={handleNext}
             >
-              <Icon name="ChevronRight" size={24} />
+              <Icon name="ChevronRight" size={20} className="md:w-6 md:h-6" />
             </Button>
 
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-1.5 md:gap-2 mt-6">
               {reviews.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300'
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentIndex ? 'bg-primary w-6 md:w-8' : 'bg-gray-300 w-2'
                   }`}
                   onClick={() => setCurrentIndex(index)}
+                  aria-label={`Показать отзыв ${index + 1}`}
                 />
               ))}
             </div>
@@ -141,15 +137,15 @@ export default function ReviewsSection() {
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       
       <Dialog open={!!selectedReview} onOpenChange={() => setSelectedReview(null)}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-auto">
+        <DialogContent className="max-w-[95vw] md:max-w-3xl max-h-[90vh] overflow-auto p-4 md:p-6">
           <DialogHeader>
-            <DialogTitle>Отзыв</DialogTitle>
+            <DialogTitle className="text-lg md:text-xl">Отзыв</DialogTitle>
           </DialogHeader>
           {selectedReview && (
             <img 
               src={selectedReview} 
               alt="Отзыв"
-              className="w-full h-auto"
+              className="w-full h-auto rounded-lg"
             />
           )}
         </DialogContent>
