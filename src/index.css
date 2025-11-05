@@ -142,4 +142,51 @@
   .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
   }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slideInFromBottom 1s ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
 }
