@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ProgramSection from '@/components/sections/ProgramSection';
-import ResultsSection from '@/components/sections/ResultsSection';
+
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import PricingSection from '@/components/sections/PricingSection';
 import ContactsSection from '@/components/sections/ContactsSection';
@@ -37,7 +37,6 @@ export default function Index() {
         <HeroSection />
         <AboutSection />
         <ProgramSection />
-        <ResultsSection />
         <ReviewsSection />
 
         <PricingSection />

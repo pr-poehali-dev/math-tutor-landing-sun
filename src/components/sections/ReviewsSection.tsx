@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
 import BookingModal from '@/components/ui/booking-modal';
 
@@ -18,22 +16,24 @@ export default function ReviewsSection() {
 
   const reviews = [
     {
-      name: 'Кристина Руденко',
-      role: 'Ученица 11 класса',
-      initials: 'КР',
-      text: 'Михаил — лучший репетитор! Благодаря ему я сдала ЕГЭ на 92 балла, хотя начинала с 45. Объясняет так, что все становится понятно.'
+      imageUrl: 'https://cdn.poehali.dev/files/97d3cf71-d5c6-4b66-9879-2069f00e3f22.png',
+      alt: 'Отзыв Елены Алексеевны'
     },
     {
-      name: 'Алишер Джураев',
-      role: 'Ученик 9 класса',
-      initials: 'АД',
-      text: 'Раньше математика была моим кошмаром. Михаил помог полюбить этот предмет. Сдал ОГЭ на отлично!'
+      imageUrl: 'https://cdn.poehali.dev/files/eb13e8ba-8391-45ca-91e4-06688d6e9d1d.png',
+      alt: 'Отзыв Ольги Николаевны'
     },
     {
-      name: 'Елена Тарарушкина',
-      role: 'Мама ученика',
-      initials: 'ЕТ',
-      text: 'Очень довольны результатами! Сын стал уверенно решать задачи, улучшились оценки в школе. Спасибо за профессионализм!'
+      imageUrl: 'https://cdn.poehali.dev/files/a93164b2-b4c8-4e49-969d-57f2d05032c1.png',
+      alt: 'Отзыв Ларисы Михайловны'
+    },
+    {
+      imageUrl: 'https://cdn.poehali.dev/files/f966a38c-1a67-4c50-a1ad-8150b70628cf.png',
+      alt: 'Отзыв Натальи Викторовны'
+    },
+    {
+      imageUrl: 'https://cdn.poehali.dev/files/527d3678-c402-427e-b888-43d185501487.png',
+      alt: 'Отзыв Максима Сергеевича'
     }
   ];
 
@@ -45,31 +45,15 @@ export default function ReviewsSection() {
             <Badge className="mb-4">Отзывы</Badge>
             <h2 className="text-4xl font-bold mb-4">Что говорят ученики и родители</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {reviews.map((review, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <Avatar>
-                      <AvatarFallback>{review.initials}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <CardTitle className="text-base">{review.name}</CardTitle>
-                      <CardDescription>{review.role}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Icon key={i} name="Star" className="text-yellow-400 fill-yellow-400" size={16} />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground">
-                    "{review.text}"
-                  </p>
-                </CardContent>
-              </Card>
+              <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <img 
+                  src={review.imageUrl} 
+                  alt={review.alt}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             ))}
           </div>
           <div className="text-center mt-12">
