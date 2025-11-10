@@ -18,12 +18,6 @@ export default function AboutSection() {
 
   const handlePlayVideo = () => {
     setShowVideo(true);
-    setTimeout(() => {
-      const videoElement = document.getElementById('main-video') as HTMLVideoElement;
-      if (videoElement) {
-        videoElement.play();
-      }
-    }, 100);
   };
 
   return (
