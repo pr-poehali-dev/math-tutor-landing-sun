@@ -21,19 +21,13 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4">О преподавателе</Badge>
-          <h2 className="text-4xl font-bold mb-4">Михаил — ваш проводник в мир математики</h2>
+          <h2 className="text-4xl font-bold mb-4">Михаил — репетитор по математике</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Профессиональный репетитор с успешным многолетним опытом преподавания
+            С 2015 года помогаю ученикам успешно убрать пробелы в знаниях и подготавливаю к сдаче ОГЭ и ЕГЭ
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-          <div className="flex justify-center">
-            <img 
-              src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
-              alt="Репетитор Михаил" 
-              className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+
           <div className="space-y-6">
             <Card className="hover:shadow-xl transition-all duration-300">
               <CardHeader>
@@ -46,7 +40,7 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Выпускник физико-математического класса технического лицея. Окончил аспирантуру и преподавал более 5 лет в университете.
+                  Выпускник физико-математического класса технического лицея. Два высших образования и опыт работы в системе образования 11 лет.
                 </p>
               </CardContent>
             </Card>
@@ -71,7 +65,7 @@ export default function AboutSection() {
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <Icon name="Award" className="text-accent" size={24} />
                   </div>
-                  <CardTitle>10 лет опыта</CardTitle>
+                  <CardTitle>С 2015 года</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
