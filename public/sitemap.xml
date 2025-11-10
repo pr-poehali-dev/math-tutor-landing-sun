@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://math-tutor-landing-sun.poehali.app</loc>
     <lastmod>2025-11-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg</image:loc>
+      <image:title>Репетитор по математике Михаил</image:title>
+      <image:caption>Опытный репетитор по математике в Москве, Солнцево</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://math-tutor-landing-sun.poehali.app#about</loc>
@@ -27,7 +33,7 @@
   <url>
     <loc>https://math-tutor-landing-sun.poehali.app#reviews</loc>
     <lastmod>2025-11-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
