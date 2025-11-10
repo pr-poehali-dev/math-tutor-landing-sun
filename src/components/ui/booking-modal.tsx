@@ -109,15 +109,15 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <Card className="max-w-md w-full animate-fade-in" onClick={(e) => e.stopPropagation()}>
-        <CardHeader>
+        <CardHeader className="p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <CardTitle>Запись на занятие</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">Запись на занятие</CardTitle>
             <Button variant="ghost" size="icon" onClick={onClose}>
               <Icon name="X" size={20} />
             </Button>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-4 sm:p-6">
           <p className="text-muted-foreground mb-4">Просто напишите мне и я перезвоню вам или напишу в ближайшее окошко</p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

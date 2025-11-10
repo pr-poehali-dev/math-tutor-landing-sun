@@ -20,7 +20,7 @@ export default function PricingSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4">Стоимость</Badge>
-          <h2 className="text-4xl font-bold mb-4">Цены на занятия</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Цены на занятия</h2>
           <p className="text-muted-foreground">Прозрачные и честные цены</p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
@@ -33,7 +33,7 @@ export default function PricingSection() {
                 </div>
                 <CardTitle className="text-2xl">Офлайн</CardTitle>
               </div>
-              <div className="text-4xl font-bold text-primary">2500 ₽</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">2500 ₽</div>
               <div className="text-sm text-muted-foreground">за 60 минут</div>
             </CardHeader>
             <CardContent>
@@ -69,7 +69,7 @@ export default function PricingSection() {
                 </div>
                 <CardTitle className="text-2xl">Онлайн</CardTitle>
               </div>
-              <div className="text-4xl font-bold text-secondary">2500 ₽</div>
+              <div className="text-3xl md:text-4xl font-bold text-secondary">2500 ₽</div>
               <div className="text-sm text-muted-foreground">за 60 минут</div>
             </CardHeader>
             <CardContent>
