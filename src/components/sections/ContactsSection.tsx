@@ -248,6 +248,31 @@ export default function ContactsSection() {
 
           </div>
         </div>
+        
+        <div className="mt-12 max-w-6xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Icon name="MapPin" className="text-primary" size={24} />
+                Где я нахожусь
+              </CardTitle>
+              <CardDescription>Москва, Солнцево, улица Богданова дом 48</CardDescription>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="w-full h-[400px] md:h-[500px] rounded-b-lg overflow-hidden">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=37.398833%2C55.640278&z=17&pt=37.398833,55.640278,pm2rdm&mode=whatshere"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ position: 'relative' }}
+                  title="Карта местоположения репетитора"
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );
