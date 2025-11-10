@@ -107,7 +107,7 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="text-center">
+          <div className="text-center mt-3">
             <Badge className="text-base px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
               <Icon name="Play" className="mr-2" size={18} />
               Узнайте больше о методике обучения
