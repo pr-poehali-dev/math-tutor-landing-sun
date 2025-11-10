@@ -261,7 +261,7 @@ export default function ContactsSection() {
             <CardContent className="p-0">
               <div className="w-full h-[400px] md:h-[500px] rounded-b-lg overflow-hidden">
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=37.400444%2C55.637833&z=16&l=map&pt=37.400444,55.637833,pm2rdm"
+                  src="https://yandex.ru/map-widget/v1/?ll=37.395758%2C55.650672&z=16&l=map&pt=37.395758,55.650672,pm2rdm"
                   width="100%"
                   height="100%"
                   frameBorder="0"
