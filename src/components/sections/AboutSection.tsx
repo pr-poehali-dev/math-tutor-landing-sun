@@ -17,8 +17,13 @@ export default function AboutSection() {
   };
 
   const toggleVideo = () => {
-    setIsVideoPlaying(!isVideoPlaying);
-    if (!isVideoPlaying) {
+    const newState = !isVideoPlaying;
+    setIsVideoPlaying(newState);
+    
+    if (newState) {
+      if (typeof window !== 'undefined' && window.ym) {
+        window.ym(105006130, 'reachGoal', 'video_played');
+      }
       setTimeout(() => {
         const videoContainer = document.getElementById('video-container');
         if (videoContainer) {
