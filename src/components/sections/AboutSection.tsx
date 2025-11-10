@@ -97,7 +97,7 @@ export default function AboutSection() {
             <div className="bg-black rounded-2xl overflow-hidden">
               <div className="relative" style={{ paddingBottom: '56.25%' }}>
                 <iframe
-                  src="https://disk.yandex.ru/i/ryimiWxBZj59wg"
+                  src="https://www.youtube.com/embed/1JSbzmA4Zec"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
