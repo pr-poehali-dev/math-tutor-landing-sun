@@ -95,15 +95,22 @@ export default function AboutSection() {
           
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
             <div className="bg-black rounded-2xl overflow-hidden">
-              <div className="relative" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  src="https://www.youtube.com/embed/1JSbzmA4Zec"
-                  className="absolute top-0 left-0 w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title="Видео о репетиторе"
-                ></iframe>
+              <div className="relative aspect-video">
+                <video
+                  className="w-full h-full object-contain"
+                  controls
+                  preload="metadata"
+                  playsInline
+                  poster="https://img.youtube.com/vi/1JSbzmA4Zec/maxresdefault.jpg"
+                >
+                  <source src="https://www.youtube.com/watch?v=1JSbzmA4Zec" type="video/mp4" />
+                  <p className="text-white text-center p-4">
+                    Ваш браузер не поддерживает видео. 
+                    <a href="https://youtu.be/1JSbzmA4Zec" className="text-blue-400 underline ml-2" target="_blank" rel="noopener noreferrer">
+                      Смотреть на YouTube
+                    </a>
+                  </p>
+                </video>
               </div>
             </div>
           </div>
