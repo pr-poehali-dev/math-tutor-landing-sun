@@ -134,14 +134,22 @@ export default function AboutSection() {
                   </div>
                 ) : (
                   <div className="animate-in fade-in duration-700">
-                    <iframe
-                      src="https://vk.com/video_ext.php?oid=-233516523&id=456239017&hd=2&autoplay=1"
+                    <video
                       className="w-full h-full"
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock"
-                      allowFullScreen
-                      title="Видео о репетиторе"
-                    ></iframe>
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="metadata"
+                      controlsList="nodownload"
+                    >
+                      <source src="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" type="video/mp4" />
+                      <p className="text-white text-center p-4">
+                        Ваш браузер не поддерживает видео. 
+                        <a href="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" className="text-blue-400 underline ml-2" target="_blank" rel="noopener noreferrer">
+                          Скачать видео
+                        </a>
+                      </p>
+                    </video>
                   </div>
                 )}
               </div>
