@@ -7,12 +7,30 @@ import BookingModal from '@/components/ui/booking-modal';
 
 export default function AboutSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const handleBookingClick = () => {
     if (typeof window !== 'undefined' && window.ym) {
       window.ym(105006130, 'reachGoal', 'booking_clicked');
     }
     setIsModalOpen(true);
+  };
+
+  const toggleVideo = () => {
+    const newState = !isVideoPlaying;
+    setIsVideoPlaying(newState);
+    
+    if (newState) {
+      if (typeof window !== 'undefined' && window.ym) {
+        window.ym(105006130, 'reachGoal', 'video_played');
+      }
+      setTimeout(() => {
+        const videoContainer = document.getElementById('video-container');
+        if (videoContainer) {
+          videoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -95,30 +113,57 @@ export default function AboutSection() {
           
           <div 
             id="video-container"
-            className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1"
+            className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 transition-all duration-500"
           >
-            <div className="bg-black rounded-xl overflow-hidden">
-              <video
-                className="w-full h-auto"
-                controls
-                playsInline
-                preload="metadata"
-                poster="https://sun9-14.userapi.com/impg/bZ_Yb7r9FHQfT5xeO7pnEhT2uOXpDnbgHYk2Mw/3lgYVsNfPOI.jpg?size=1280x720&quality=95&sign=0d0c1f0f5e8e8e8e8e8e8e8e8e8e8e8e&type=video_thumb"
-                onPlay={() => {
-                  if (typeof window !== 'undefined' && window.ym) {
-                    window.ym(105006130, 'reachGoal', 'video_played');
-                  }
-                }}
-              >
-                <source src="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" type="video/mp4" />
-                <p className="text-white text-center p-4">
-                  Ваш браузер не поддерживает видео. 
-                  <a href="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" className="text-blue-400 underline ml-2" target="_blank" rel="noopener noreferrer">
-                    Скачать видео
-                  </a>
-                </p>
-              </video>
+            <div className="bg-black rounded-2xl overflow-hidden">
+              <div className="relative aspect-video">
+                {!isVideoPlaying ? (
+                  <div 
+                    className="absolute inset-0 flex items-center justify-center cursor-pointer group"
+                    style={{
+                      backgroundImage: 'url(https://sun9-14.userapi.com/impg/bZ_Yb7r9FHQfT5xeO7pnEhT2uOXpDnbgHYk2Mw/3lgYVsNfPOI.jpg?size=1280x720&quality=95&sign=0d0c1f0f5e8e8e8e8e8e8e8e8e8e8e8e&type=video_thumb)',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                    onClick={toggleVideo}
+                  >
+                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
+                    <div className="relative z-10 w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl animate-pulse">
+                      <Icon name="Play" className="text-white ml-2" size={48} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="animate-in fade-in duration-700">
+                    <video
+                      className="w-full h-full"
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="metadata"
+                      controlsList="nodownload"
+                    >
+                      <source src="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" type="video/mp4" />
+                      <p className="text-white text-center p-4">
+                        Ваш браузер не поддерживает видео. 
+                        <a href="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" className="text-blue-400 underline ml-2" target="_blank" rel="noopener noreferrer">
+                          Скачать видео
+                        </a>
+                      </p>
+                    </video>
+                  </div>
+                )}
+              </div>
             </div>
+          </div>
+          <div className="text-center mt-3">
+            <Button 
+              onClick={toggleVideo}
+              variant="outline"
+              className="text-base px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white border-0 hover:opacity-90 transition-all hover:scale-105"
+            >
+              <Icon name={isVideoPlaying ? "Pause" : "Play"} className="mr-2" size={18} />
+              {isVideoPlaying ? "Остановить видео" : "Узнайте больше о методике обучения"}
+            </Button>
           </div>
         </div>
 
