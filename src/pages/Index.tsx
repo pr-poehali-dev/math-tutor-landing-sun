@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroSection from '@/components/sections/HeroSection';
+
 import AboutSection from '@/components/sections/AboutSection';
 import ProgramSection from '@/components/sections/ProgramSection';
 
@@ -34,7 +34,6 @@ export default function Index() {
       <Header />
       
       <main className="pt-20">
-        <HeroSection />
         <AboutSection />
         <ProgramSection />
         <ReviewsSection />
