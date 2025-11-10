@@ -23,16 +23,9 @@ export default function AboutSection() {
           <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
             Михаил — репетитор по математике
           </h2>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 blur-2xl"></div>
-            <p className="relative text-xl md:text-3xl font-extrabold text-gray-900 leading-relaxed px-4 md:px-8 py-6 md:py-8 bg-white/40 backdrop-blur-sm rounded-2xl border-2 border-purple-300/50 shadow-xl">
-              <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-lg font-black text-2xl md:text-4xl mr-2">С 2015 года</span> 
-              помогаю ученикам успешно 
-              <span className="inline-block px-3 py-1 mx-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg shadow-lg font-black text-2xl md:text-4xl">убрать пробелы в знаниях</span> 
-              и подготавливаю к сдаче 
-              <span className="inline-block px-3 py-1 ml-2 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-white rounded-lg shadow-lg font-black text-2xl md:text-4xl animate-pulse">ОГЭ и ЕГЭ</span>
-            </p>
-          </div>
+          <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            С 2015 года помогаю ученикам успешно убрать пробелы в знаниях и подготавливаю к сдаче ОГЭ и ЕГЭ
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-12">
