@@ -80,9 +80,7 @@ export default function AboutSection() {
                 </div>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-muted-foreground">
-                  Более 200 учеников успешно сдали ОГЭ и ЕГЭ на высокие баллы.
-                </p>
+                <p className="text-muted-foreground">С 2015 года работаю репетитором и более 200 учеников успешно сдали ОГЭ и ЕГЭ на высокие баллы.</p>
               </CardContent>
             </Card>
           </div>
