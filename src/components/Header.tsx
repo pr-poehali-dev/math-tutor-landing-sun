@@ -46,7 +46,7 @@ export default function Header() {
           
           <nav className="hidden md:flex gap-6">
             <a href="#about" className="hover:text-primary transition-colors">О преподавателе</a>
-            <a href="#program" className="hover:text-primary transition-colors">Программа</a>
+            <a href="#program" className="hover:text-primary transition-colors">Услуги</a>
             <a href="#reviews" className="hover:text-primary transition-colors">Отзывы</a>
             <a href="#pricing" className="hover:text-primary transition-colors">Стоимость</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
