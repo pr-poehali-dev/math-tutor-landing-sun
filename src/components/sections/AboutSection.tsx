@@ -27,7 +27,13 @@ export default function AboutSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-
+          <div className="flex justify-center">
+            <img 
+              src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
+              alt="Репетитор Михаил" 
+              className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
+            />
+          </div>
           <div className="space-y-6">
             <Card className="hover:shadow-xl transition-all duration-300">
               <CardHeader>
@@ -65,7 +71,7 @@ export default function AboutSection() {
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <Icon name="Award" className="text-accent" size={24} />
                   </div>
-                  <CardTitle>С 2015 года</CardTitle>
+                  <CardTitle>10 лет опыта</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>

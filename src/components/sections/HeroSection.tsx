@@ -20,7 +20,7 @@ export default function HeroSection() {
       <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-6 animate-fade-in">
             <Badge className="bg-accent text-white">ЕГЭ · ОГЭ · Школьная программа</Badge>
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
@@ -88,14 +88,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="relative animate-scale-in">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-20 blur-3xl animate-float"></div>
-            <img 
-              src="https://cdn.poehali.dev/projects/a3578d7b-3633-410b-a6b7-51a7e076739f/files/1a921a25-e987-483c-a795-c05f67868f92.jpg" 
-              alt="Математика" 
-              className="relative rounded-2xl shadow-2xl w-full"
-            />
-          </div>
+
         </div>
       </div>
       </section>
