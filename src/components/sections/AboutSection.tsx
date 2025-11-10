@@ -26,14 +26,60 @@ export default function AboutSection() {
             С 2015 года помогаю ученикам успешно убрать пробелы в знаниях и подготавливаю к сдаче ОГЭ и ЕГЭ
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-          <div className="flex justify-center">
-            <img 
-              src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
-              alt="Репетитор Михаил" 
-              className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
-            />
+        <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+          <div className="space-y-6">
+            <div className="flex justify-center">
+              <img 
+                src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
+                alt="Репетитор Михаил" 
+                className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-2xl space-y-6">
+              <p className="text-lg font-semibold text-accent text-center">
+                Уберем все пробелы в знаниях и улучшим оценки в школе!
+              </p>
+              <p className="text-base text-muted-foreground text-center">
+                Пишите/звоните, проведем бесплатное пробное занятие и отвечу на все интересующие Вас вопросы. Буду рад помочь разобраться в математике.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  onClick={handleBookingClick}
+                >
+                  <Icon name="Rocket" className="mr-2" size={20} />
+                  Записаться на пробный урок
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-yellow-100 to-yellow-50 hover:from-yellow-200 hover:to-yellow-100 text-yellow-900 border-2 border-yellow-400 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  onClick={handleBookingClick}
+                >
+                  <Icon name="Gift" className="mr-2 text-yellow-600" size={20} />
+                  Первый урок БЕСПЛАТНО
+                </Button>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 pt-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">200+</div>
+                  <div className="text-sm text-muted-foreground">Учеников</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-secondary">85+</div>
+                  <div className="text-sm text-muted-foreground">Средний балл ЕГЭ</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent">10+</div>
+                  <div className="text-sm text-muted-foreground">Лет опыта</div>
+                </div>
+              </div>
+            </div>
           </div>
+          
           <div className="space-y-6">
             <Card className="hover:shadow-xl transition-all duration-300">
               <CardHeader>
