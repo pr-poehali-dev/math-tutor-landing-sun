@@ -47,7 +47,6 @@ export default function Header() {
           <nav className="hidden md:flex gap-6">
             <a href="#about" className="hover:text-primary transition-colors">О преподавателе</a>
             <a href="#program" className="hover:text-primary transition-colors">Программа</a>
-            <a href="#results" className="hover:text-primary transition-colors">Результаты</a>
             <a href="#reviews" className="hover:text-primary transition-colors">Отзывы</a>
             <a href="#pricing" className="hover:text-primary transition-colors">Стоимость</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
@@ -108,13 +107,6 @@ export default function Header() {
                     onClick={handleNavClick}
                   >
                     Программа
-                  </a>
-                  <a 
-                    href="#results" 
-                    className="text-lg hover:text-primary transition-colors py-2 border-b"
-                    onClick={handleNavClick}
-                  >
-                    Результаты
                   </a>
                   <a 
                     href="#reviews" 
