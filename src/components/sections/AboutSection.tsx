@@ -86,6 +86,29 @@ export default function AboutSection() {
           </div>
         </div>
         
+        <div className="mb-12 max-w-5xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
+            <div className="bg-black rounded-2xl overflow-hidden">
+              <div className="relative" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://disk.yandex.ru/i/ryimiWxBZj59wg"
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Видео о репетиторе"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <Badge className="text-base px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+              <Icon name="Play" className="mr-2" size={18} />
+              Узнайте больше о методике обучения
+            </Badge>
+          </div>
+        </div>
+
         <div className="bg-gradient-to-br from-white/90 via-blue-50/50 to-purple-50/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20 space-y-8">
           <div className="text-center space-y-4">
             <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
