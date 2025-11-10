@@ -23,9 +23,11 @@ export default function AboutSection() {
           <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
             Михаил — репетитор по математике
           </h2>
-          <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            С 2015 года помогаю ученикам успешно убрать пробелы в знаниях и подготавливаю к сдаче ОГЭ и ЕГЭ
-          </p>
+          <div className="bg-gradient-to-r from-blue-100/80 via-purple-100/80 to-pink-100/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg border-2 border-purple-200/50 max-w-4xl mx-auto">
+            <p className="text-lg md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 leading-relaxed">
+              С 2015 года помогаю ученикам успешно убрать пробелы в знаниях и подготавливаю к сдаче ОГЭ и ЕГЭ
+            </p>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-12">
