@@ -86,7 +86,7 @@ export default function AboutSection() {
           </div>
         </div>
         
-        <div className="mb-12 max-w-5xl mx-auto space-y-6">
+        <div className="mb-6 max-w-5xl mx-auto space-y-6">
           <div className="text-center">
             <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
               Уберем все пробелы в знаниях и улучшим оценки в школе!
