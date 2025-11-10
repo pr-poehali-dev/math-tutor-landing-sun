@@ -117,17 +117,17 @@ export default function AboutSection() {
             </Button>
           </div>
           
-          <div className="grid grid-cols-3 gap-4 md:gap-8 pt-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 pt-6 max-w-3xl mx-auto">
             <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200/50">
-              <div className="text-3xl md:text-5xl font-bold text-blue-600">200+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600">200+</div>
               <div className="text-sm md:text-base text-gray-700 mt-2">Учеников</div>
             </div>
             <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100/50 border border-purple-200/50">
-              <div className="text-3xl md:text-5xl font-bold text-purple-600">85+</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-600">85+</div>
               <div className="text-sm md:text-base text-gray-700 mt-2">Средний балл ЕГЭ</div>
             </div>
             <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100/50 border border-pink-200/50">
-              <div className="text-3xl md:text-5xl font-bold text-pink-600">10+</div>
+              <div className="text-4xl md:text-5xl font-bold text-pink-600">10+</div>
               <div className="text-sm md:text-base text-gray-700 mt-2">Лет опыта</div>
             </div>
           </div>

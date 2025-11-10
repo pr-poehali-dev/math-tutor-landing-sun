@@ -69,15 +69,15 @@ export default function ChatWidget() {
       </Button>
 
       {isChatOpen && (
-        <Card className="fixed bottom-24 right-6 w-96 shadow-2xl z-50 animate-slide-up">
-          <CardHeader className="bg-primary text-white">
-            <CardTitle className="flex items-center gap-2">
+        <Card className="fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-96 max-w-md shadow-2xl z-50 animate-slide-up">
+          <CardHeader className="bg-primary text-white p-3 sm:p-4">
+            <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
               <Icon name="MessageCircle" size={20} />
               Онлайн-консультант
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-4 space-y-4">
-            <div className="h-80 overflow-y-auto space-y-3 mb-4">
+          <CardContent className="p-3 sm:p-4 space-y-4">
+            <div className="h-64 sm:h-80 overflow-y-auto space-y-3 mb-4">
               {chatMessages.map((msg, idx) => (
                 <div key={idx} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[80%] p-3 rounded-lg ${

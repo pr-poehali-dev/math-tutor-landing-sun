@@ -97,12 +97,22 @@
     @apply border-border;
   }
 
+  * {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Open Sans", sans-serif;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
   }
 
   h1,
@@ -112,8 +122,10 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
   }
 
   p,
@@ -122,9 +134,10 @@
   li,
   a,
   button {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
   }
 }
 
