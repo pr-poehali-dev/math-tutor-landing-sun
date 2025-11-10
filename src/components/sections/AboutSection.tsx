@@ -86,7 +86,13 @@ export default function AboutSection() {
           </div>
         </div>
         
-        <div className="mb-12 max-w-5xl mx-auto">
+        <div className="mb-12 max-w-5xl mx-auto space-y-6">
+          <div className="text-center">
+            <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+              Уберем все пробелы в знаниях и улучшим оценки в школе!
+            </h3>
+          </div>
+          
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
             <div className="bg-black rounded-2xl overflow-hidden">
               <div className="relative" style={{ paddingBottom: '56.25%' }}>
@@ -101,7 +107,7 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="text-center mt-6">
+          <div className="text-center">
             <Badge className="text-base px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
               <Icon name="Play" className="mr-2" size={18} />
               Узнайте больше о методике обучения
@@ -111,9 +117,6 @@ export default function AboutSection() {
 
         <div className="bg-gradient-to-br from-white/90 via-blue-50/50 to-purple-50/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20 space-y-8">
           <div className="text-center space-y-4">
-            <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-              Уберем все пробелы в знаниях и улучшим оценки в школе!
-            </h3>
             <p className="text-base md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               Пишите/звоните, проведем бесплатное пробное занятие и отвечу на все интересующие Вас вопросы. Буду рад помочь разобраться в математике.
             </p>
