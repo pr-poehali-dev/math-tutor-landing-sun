@@ -134,22 +134,13 @@ export default function AboutSection() {
                   </div>
                 ) : (
                   <div className="animate-in fade-in duration-700">
-                    <video
+                    <iframe
                       className="w-full h-full"
-                      controls
-                      autoPlay
-                      playsInline
-                      preload="metadata"
-                      controlsList="nodownload"
-                    >
-                      <source src="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" type="video/mp4" />
-                      <p className="text-white text-center p-4">
-                        Ваш браузер не поддерживает видео. 
-                        <a href="https://disk.yandex.ru/i/6Nm8-1b79ZNVZg" className="text-blue-400 underline ml-2" target="_blank" rel="noopener noreferrer">
-                          Скачать видео
-                        </a>
-                      </p>
-                    </video>
+                      src="https://rutube.ru/play/embed/b1c6aaf9012a6f56aac1cda4603e9632"
+                      frameBorder="0"
+                      allow="clipboard-write; autoplay"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 )}
               </div>
@@ -161,8 +152,8 @@ export default function AboutSection() {
               variant="outline"
               className="text-base px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white border-0 hover:opacity-90 transition-all hover:scale-105"
             >
-              <Icon name={isVideoPlaying ? "Pause" : "Play"} className="mr-2" size={18} />
-              {isVideoPlaying ? "Остановить видео" : "Узнайте больше о методике обучения"}
+              <Icon name={isVideoPlaying ? "X" : "Play"} className="mr-2" size={18} />
+              {isVideoPlaying ? "Скрыть видео" : "Узнайте больше о методике обучения"}
             </Button>
           </div>
         </div>
