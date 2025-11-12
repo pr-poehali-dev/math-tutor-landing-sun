@@ -117,31 +117,29 @@ export default function AboutSection() {
           >
             <div className="bg-black rounded-2xl overflow-hidden">
               <div className="relative aspect-video">
-                {!isVideoPlaying ? (
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center cursor-pointer group"
-                    style={{
-                      backgroundImage: 'url(https://sun9-14.userapi.com/impg/bZ_Yb7r9FHQfT5xeO7pnEhT2uOXpDnbgHYk2Mw/3lgYVsNfPOI.jpg?size=1280x720&quality=95&sign=0d0c1f0f5e8e8e8e8e8e8e8e8e8e8e8e&type=video_thumb)',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                    onClick={toggleVideo}
-                  >
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
-                    <div className="relative z-10 w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl animate-pulse">
-                      <Icon name="Play" className="text-white ml-2" size={48} />
-                    </div>
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer group"
+                  style={{
+                    backgroundImage: 'url(https://sun9-14.userapi.com/impg/bZ_Yb7r9FHQfT5xeO7pnEhT2uOXpDnbgHYk2Mw/3lgYVsNfPOI.jpg?size=1280x720&quality=95&sign=0d0c1f0f5e8e8e8e8e8e8e8e8e8e8e8e&type=video_thumb)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    display: isVideoPlaying ? 'none' : 'flex'
+                  }}
+                  onClick={toggleVideo}
+                >
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
+                  <div className="relative z-10 w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl animate-pulse">
+                    <Icon name="Play" className="text-white ml-2" size={48} />
                   </div>
-                ) : (
-                  <div className="animate-in fade-in duration-700">
-                    <iframe
-                      className="w-full h-full"
-                      src="https://rutube.ru/play/embed/b1c6aaf9012a6f56aac1cda4603e9632"
-                      frameBorder="0"
-                      allow="clipboard-write; autoplay"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+                </div>
+                {isVideoPlaying && (
+                  <iframe
+                    className="absolute inset-0 w-full h-full animate-in fade-in duration-700"
+                    src="https://rutube.ru/play/embed/b1c6aaf9012a6f56aac1cda4603e9632"
+                    frameBorder="0"
+                    allow="clipboard-write; autoplay"
+                    allowFullScreen
+                  ></iframe>
                 )}
               </div>
             </div>
