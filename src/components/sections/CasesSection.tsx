@@ -79,6 +79,7 @@ export default function CasesSection() {
                   <img 
                     src={caseItem.image} 
                     alt={caseItem.name}
+                    loading="lazy"
                     className="w-20 h-20 rounded-full object-cover"
                   />
                   <div className="flex-1">

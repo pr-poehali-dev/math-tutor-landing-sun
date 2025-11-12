@@ -266,6 +266,7 @@ export default function ContactsSection() {
                   height="100%"
                   frameBorder="0"
                   allowFullScreen
+                  loading="lazy"
                   style={{ position: 'relative' }}
                   title="Карта местоположения репетитора"
                 ></iframe>

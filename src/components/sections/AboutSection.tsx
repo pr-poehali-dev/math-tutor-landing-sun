@@ -53,6 +53,7 @@ export default function AboutSection() {
             <img 
               src="https://cdn.poehali.dev/files/50b8f66e-09a3-4b07-8750-b8204f1ef319.jpg" 
               alt="Репетитор Михаил" 
+              loading="lazy"
               className="rounded-2xl shadow-2xl w-full max-w-md hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -113,7 +114,7 @@ export default function AboutSection() {
           
           <div 
             id="video-container"
-            className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 transition-all duration-500"
+            className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 transition-all duration-500"
           >
             <div className="bg-black rounded-2xl overflow-hidden">
               <div className="relative aspect-video">
