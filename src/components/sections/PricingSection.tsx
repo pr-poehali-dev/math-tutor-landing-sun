@@ -69,7 +69,7 @@ export default function PricingSection() {
                 </div>
                 <CardTitle className="text-2xl">Онлайн</CardTitle>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-secondary">2500 ₽</div>
+              <div className="text-3xl md:text-4xl font-bold text-secondary">2000 ₽</div>
               <div className="text-sm text-muted-foreground">за 60 минут</div>
             </CardHeader>
             <CardContent>
